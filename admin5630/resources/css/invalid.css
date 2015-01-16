@@ -1,4 +1,3 @@
-
 .button,
 #main-content table tfoot td .bulk-actions select,
 .pagination a.number,
@@ -10,7 +9,12 @@ form select,
                 -moz-border-radius: 4px;
                 -webkit-border-radius: 4px;
 				border-radius: 4px;
-			}
+}
+
+/*改变背景颜色*/
+input[type="text"]:focus, textarea:focus {
+        background: #ffc;
+}
 			
 .content-box,
 .content-box-header,
@@ -30,11 +34,13 @@ ul.content-box-tabs li a.current,
 				border-bottom-left-radius: 0;
 				border-bottom-right-radius: 0;
                 }
+
 .content-box-header form {
 padding:10px 20px;
 margin:0;
 float:right;
-}				
+}
+
 .closed-box .content-box-header {
                 -moz-border-radius-bottomleft: 6px;
                 -moz-border-radius-bottomright: 6px;
@@ -61,5 +67,8 @@ ul.content-box-tabs li a.current {
                 }
 				
 div.wysiwyg ul.panel li a { opacity: 0.6; }
-div.wysiwyg ul.panel li a:hover, div.wysiwyg ul.panel li a.active { opacity: 0.99; }
+div.wysiwyg ul.panel li a:hover, div.wysiwyg ul.panel li a.active {
+    opacity: 0.99; 
+}
+
 

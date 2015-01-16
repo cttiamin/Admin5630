@@ -1,6 +1,6 @@
 <?php
 /** 2011-09-15
- *  jm edit 文章内容
+ *  文章内容
  **/
 
 class arcArticleAction extends arcChannelAction{

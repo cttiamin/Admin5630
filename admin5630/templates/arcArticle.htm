@@ -18,12 +18,13 @@
         </script>
     </head>    
     <body>
+
     <div id="jm-right">
             <!-- 栏目列表，添加 -->
 			<div class="content-box">				
 				<div class="content-box-header">
 					
-                    <h3>文章列表管理</h2>
+                    <h3>文章内容管理</h2>
                     
 					<ul class="content-box-tabs">
 						<li><a href="#tab1" class="default-tab">列表</a></li> 
@@ -44,11 +45,11 @@
 	 	            <form name="class-link" action="arcArticle.php">
 						<select name="c">
                             <?php echo $arcActicleSelectIn; ?>   
-                        </select>
-                        关键字：<input type="text" name="s-text" />
+                        </select>　　
+                        关键字：<input type="text" name="s-text" class="text-input medium-input" />
                         <!--时期：从<input type="text" name="s-in" />
                         到<input type="text" name="s-to" />-->
-                       <input class="button" type="submit" value="转到" name="Clink" />
+                       <input class="button" type="submit" value="搜 索" name="Clink" />
                     </form>	   
                                     </th>
 								</tr>
@@ -140,91 +141,110 @@ $arcArticle->str = '';
 								
 								<p>
                                 <label>标题名称</label>
-                                <input class="text-input medium-input"type="text"id="medium-input" name="title" />　
-                                <span class="input-notification success png_bg">必填, 添加一篇内容，名称不能为空</span></p>   
+                                <input class="text-input medium-input" type="text" id="medium-input" name="title" />
+                                <span class="input-notification success png_bg"></span>
+                                <br>
+                                <span class="input-notification text_summary">必填, 添加一篇内容，名称不能为空</span></p>   
                                 <p>                                      
 									<label>关键字</label>
-                                    <input class="text-input small-inputdatepicker" type="text" id="small-input"name="keyworld" />
-                                    <span class="input-notification success png_bg">必填,显示到页面keyworld标签中</span>
+                                    <input class="text-input small-inputdatepicker" type="text" id="small-input"name="keyworld" /><br>
+                                    <span class="input-notification text_summary">必填,显示到页面keyworld标签中</span>
 								</p>
 
 								<p>
 									<label>页面标题</label>
 									<input class="text-input medium-input"
                                     type="text" id="large-input"
-                                    name="page-title"  /> <span class="input-notification success png_bg">必填,显示到页面title标签中</span>
+                                    name="page-title"  /> <br>
+                                    <span class="input-notification text_summary">必填,显示到页面title标签中</span>
 								</p>
 
 								<p>
 									<label>是否显示</label>
 									<input type="radio" name="state" value="0" />不显示
                                     <input type="radio" name="state" value="1" checked="checked" /> 显示
-                                    <span class="input-notification success png_bg">设置此篇内容是否显示</span>
+                                    <br>
+                                    <span class="input-notification text_summary">设置此篇内容是否显示</span>
 								</p>
 								<p>
 									<label>是否推荐</label>
 									<input type="radio" name="flag" value="0" />不推荐
 									<input type="radio" name="flag" value="1" checked="checked" /> 推荐
                                     <input type="radio" name="flag" value="2"/> 重点推荐
-                                    <span class="input-notification success png_bg">设置此篇内容权重, 在列表页面的排序先后</span>
+                                    <br>
+                                    <span class="input-notification text_summary">设置此篇内容权重, 在列表页面的排序先后</span>
                                 </p>								
 								<p>
 									<label>所属栏目</label>              
 									<select name="bid" class="small-input">
 										<option value="0">顶级栏目</option>
                                         <?php  echo $arcActicleSelectIn; ?>
-									</select> 
-									<a href="/libs/plus/upfiles.php" target="_blank">上传图片</a>
+									</select>  
                                 </p>
+
                                 <?php 
-                                if( $authorityArray[4] == 1) {?>
+                                $str_HasInput = '';
+                                //隐藏表单字符
+
+                                if( $authorityArray[4] == 1) {
+                                ?>
                                 <p>    
 									<label>链接地址</label>
-                                    <input class="text-input medium-input datepicker" type="text" id="medium-input" name="link_title" /> 
-                                    <span class="input-notification success png_bg">链接的目标URL</span>
+                                    <input class="text-input medium-input datepicker" type="text" id="medium-input" name="link_title" />
+                                    <br>
+                                    <span class="input-notification text_summary">链接的目标URL</span>
                                 </p>
-<?php } else {?>
-<p><input type="hidden" name="link_title" /></p>
-<?php } ?>
+                                <?php 
+                                } else {
+                                $str_HasInput .= '<input type="hidden" name="link_title" />';   
+                                }
+                                ?>
+
 <?php if( $authorityArray[3] == 1) {?>
                                 <p>    
 									<label>Logo图片</label>
                                     <input class="text-input medium-input datepicker" type="text" id="medium-input" name="logo" /> 
-                                    <span class="input-notification success png_bg">显示此内容图片,输入图片URL</span>
+                                    <br>
+                                    <span class="input-notification text_summary">显示此内容图片,输入图片URL</span>
                                 </p>
-<?php } else {?>
-<p><input type="hidden" name="logo" /></p>
-<?php } ?>
+                                <?php } else {
+                                $str_HasInput .= '<input type="hidden" name="logo" />';
+                                }
+                                ?>
+                                
 <?php if( $authorityArray[5] == 1) {?>
                                 <p>    
 									<label>视频类型</label>
                                     <input type="radio" name="filetype" value="0" />swf格式
                                     <input type="radio" name="filetype" value="1" />flv格式
                                     <input type="radio" name="filetype" value="2" checked="checked"  />不上传
-                                    <span class="input-notification success png_bg">视频文件类型,flv或swf,此选项必须与"视频文件"保持一致</span>
+                                    <br>
+                                    <span class="input-notification text_summary">视频文件类型,flv或swf,此选项必须与"视频文件"保持一致</span>
                                 </p>                              
                                 <p>    
-									<label>视频文件</label>
-                                    <input class="text-input medium-input datepicker" type="text" id="medium-input" name="file" />
-                                    <span class="input-notification success png_bg">显示此内容视频或flash,输入视频URL</span>
+                                <label>视频文件</label>
+
+                                <input class="text-input medium-input datepicker" type="text" id="medium-input" name="file" />
+                                <br>
+                                    <span class="input-notification text_summary">显示此内容视频或flash,输入视频URL</span>
                                 </p>
                                 <p>    
-									<label>项目类型</label>
-                                    <input class="text-input medium-input datepicker" type="text" id="medium-input" name="arctype" /> 
-                                    <span class="input-notification success png_bg">项目类型说明</span>
+                                <label>项目类型</label>
+                                <input class="text-input medium-input datepicker" type="text" id="medium-input" name="arctype" /> 
+                                <br>
+                                    <span class="input-notification text_summary">项目类型说明</span>
                                     </p>
                                <p>    
 									<label>服务客户</label>
                                     <input class="text-input medium-input datepicker" type="text" id="medium-input" name="kehutype" /> 
-                                    <span class="input-notification success png_bg">服务客户</span>
+                                    <br>
+                                    <span class="input-notification text_summary">服务客户</span>
                                </p>
-<?php } else {?>
-<p><input type="hidden" name="filetype" value="0"/>
-<input type="hidden" name="file"  value="0"/>
-<input type="hidden" name="arctype" />
-<input type="hidden" name="kehutype" />
-</p>
-<?php } ?>
+                               <?php } else {
+                               $str_HasInput .= '<input type="hidden" name="filetype" value="0"/><input type="hidden" name="file"  value="0"/><input type="hidden" name="arctype" /><input type="hidden" name="kehutype" />';
+                               }
+                               ?>
+
 <?php if( $authorityArray[1] == 1) {?>    
 								<p>
 									<label>描述</label>
@@ -233,12 +253,18 @@ $arcArticle->str = '';
                                         name="discription"
                                         cols="79" rows="5"></textarea>
                                 </p>
-<?php } else {?>
-<p><input type="hidden" name="discription" /></p>
-<?php } ?>
+                                <?php 
+                                } else {
+                                $str_HasInput .= '<input type="hidden" name="discription" />';
+                                }
+                                ?>
+
 <?php if( $authorityArray[2] == 1) {?>
                                 <p>
-                                <label>内容</label>                              
+                                <label>内容</label> 
+                                <strong>
+                                    <a href="/libs/plus/upfiles.php" target="_blank">上传图片</a>
+                                </strong>
 <?php
 		include(JMADMIN."/fckeditor/fckeditor.php") ;
 		//PHP用$_POST['FCKeditor1']得到FCKeditor1的值。
@@ -250,18 +276,22 @@ $arcArticle->str = '';
 		$oFCKeditor->Create() ;
 ?>
 								</p>
-<?php } else {?>
-<input type="hidden" name="content"/>
-<?php } ?>							
-								<p>
-									<input class="button" type="submit"   value="确定提交" name="Add" />
-								</p>
+                                <?php 
+                                } else {
+                                $str_HasInput .='<input type="hidden" name="content"/>'; 
+                                }
+                                ?>
+<p>
+<?php echo $str_HasInput; ?>
+</p>
 
+                                <input class="button" type="submit"   value="确定提交" name="Add" />
+
+								</p>
 								
 							</fieldset>
-							
-							<div class="clear"></div><!-- End .clear -->
-							
+
+							<div class="clear"></div><!-- End .clear -->							
 						</form>
 						
 					</div> <!-- End #tab2 -->        

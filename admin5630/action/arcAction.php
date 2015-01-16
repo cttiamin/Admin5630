@@ -1,8 +1,10 @@
 <?php
 /**
- * 文章动作类 
+ * 文章动作根类
+ * 子类: arcChannelAction()
+ *
  * Last Change: 2011-12-29 12:24
- * Maintainer: etcphp@sohu.com
+ * Maintainer: cttiamin@foxmail.com
  **/
 //define('ADARCACTION', ereg_replace("[/\\]{1,}", '/', dirname(__FILE__) ) ); 
 //require_once(ADARCACTION.'/config.php');
