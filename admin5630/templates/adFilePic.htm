@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>文件管理</title>	  
+        <!-- CSS -->
+        <link rel="stylesheet" href="<?php echo '/'.ADNAME.'/';?>resources/css/inc.css" type="text/css" media="screen" />	  
+		<!-- jQuery -->
+        <script type="text/javascript" src="/style/js/jquery-1.3.2.min.js"></script>
+    	
+</head>    
+<body>
+    <div id="jm-right" class="files">
+			<!-- Page Head -->
+			<h2>图片管理</h2>
+            <p id="page-intro">遍历所有图片文件</p>
+
+<?php        
+foreach($info as $k => $v)
+{
+ $getimage =  $adFileAction->getimage($v); //获取图片信息
+?>
+            <dl>
+                <dt> <?php echo strrchr($v , '/') ;?></dt>
+             <!--<dd> <a  href="<?php echo $pageurl."?a=proPic&amp;m=picList";?> ">
+                <img src="<?php echo '/upfiles/product'.strrchr($v , '/'); ?>"  width="130"
+                height="130" /> </a></dd> 
+            -->
+            <dd><a href="?a=del&amp;m=<?php echo $v; ?>">删除</a> 像素: 
+         <?php
+            
+            echo $getimage[0]."*";
+            echo $getimage[1];
+         ?> 
+         </dd>
+         <dd><a href="#">查看原图</a> </dd>
+         <dd>上传时间:　 <?php echo date("Y-m-d h:i:s",filemtime($v));?> <br/>
+         修改时间: <?php echo date("Y-m-d h:i:s",filectime($v));?> 
+         </dd>
+        </dl>
+<?php } ?> 
+
+            <div class="clear"></div> <!-- End .clear -->
+</div>
+    </body>
+</html>

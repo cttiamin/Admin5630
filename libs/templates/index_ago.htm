@@ -1,0 +1,225 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>{%title%}</title>
+        <meta name="keywords" content="{%keyword%}" />
+        <meta name="description" content="{%discription%}" />
+        <meta name="author" content="etcphp@qq.com" />
+        <link href="/style/css/style.css" rel="stylesheet" type="text/css" media="screen" />
+
+        <SCRIPT type="text/javascript" src="/style/js/jquery/jquery-1.4.2.min.js"></SCRIPT>
+<!-- index video -->
+<SCRIPT type="text/javascript" src="/style/js/player/swfobject.js"></SCRIPT>
+<SCRIPT type="text/javascript" src="/style/js/player/play.js"></SCRIPT>
+<SCRIPT type="text/javascript" src="/style/js/my.js"></SCRIPT>
+
+    </head>
+    <body id="home-page">
+        <div id="header">
+            <div id="nav">
+                <h1><a href="/">首页</a></h1>
+                <ul class="menu">
+                    {%nav%}
+                </ul><!--end menu-->
+                <div class="search">
+                    <div class="phone">
+                        联系电话:{%top_phone%}
+                    </div><!--end phone-->
+                    <div class="search_form">
+                        <fieldset class="site_search">
+<form method="post" action="/search.php" onSubmit="">
+    <div class="search_box"><input type="text" name="term"></div>
+    <input type="submit" value="" class="submit">
+</form>
+                        </fieldset>
+                    </div><!--end search_form-->
+                </div><!--end search-->
+            </div><!--end nav-->
+            <div id="time">
+                <div class="time">
+<span class="week" id="showweek"></span>
+<div class="time_right">
+    <span class="time_day" id="showday"></span>
+    <span class="time_all" id="showtime"></span>
+</div> 
+                </div><!--end time-->
+                <div class="home_ad">
+                    {%top_ad%}
+                </div><!--end home_ad-->
+            </div><!--end time-->
+        </div><!--end header-->
+
+        <div id="banner">
+            <div id="banner_box">
+                <div class="banner_left">
+
+<link href="/style/css/banner/global.css" rel="stylesheet" type="text/css" media="screen" />
+<SCRIPT type="text/javascript" src="/style/js/jquery/jquery-1.4.4.min.js"></SCRIPT>
+<script src="/style/js/banner/slides.min.jquery.js"></script>
+	<div id="container">
+        <div id="example">
+			<div id="slides">
+				<div class="slides_container">
+                    {%index_banner%}
+				</div>
+				<a href="#" class="prev"><img src="/style/img/banner/arrow-prev.png" width="52" height="92" alt="Arrow Prev"></a>
+				<a href="#" class="next"><img src="/style/img/banner/arrow-next.png" width="52" height="92" alt="Arrow Next"></a>
+            </div>
+		</div>
+    </div>
+
+                </div><!--end banner_left-->
+                <div class="banner_right">
+                    {%index_video%}
+                </div><!--end banner_right-->
+            </div><!--end banner_box-->
+        </div><!--end banner-->
+
+        <div id="page">
+            <div class="video">
+                <h2 class="video_h2"> <a href="/case/flash/" >更多动画案例</a> </h2>
+                <div class="video_box">
+                    <div class="video_left">
+                        <ul class="video_left_top">
+                            {%index_case_01%}
+                        </ul>
+                        <div class="video_pic">
+
+<script type="text/javascript" src="/style/js/easing.js"></script>
+<script type="text/javascript" src="/style/js/menu.js"></script>
+<div id="slideBox">
+                        <span id="sildeLeft"></span>
+                        <span id="sildeRight"></span>
+                        <div id="slideUl">
+                            <ul>
+                                {%index_case_04%}
+                            </ul>
+                        </div>
+</div><!--end slideBox-->                              
+                        </div><!--end video_pic-->
+                    </div><!--end video_left-->
+                    <div class="video_right">
+                        <h3>公司新闻　　　　　　　
+                        <a href="/news/company/" class="video_right_more">更多</a>
+                        </h3>
+                        <ul>
+                            {%ind_news_9%}
+                        </ul>
+                    </div><!--end video_right-->
+                </div><!--end video_box-->
+            </div><!--end video-->
+            <div class="business">
+                <h2 class="business_h2">业务范围</h2>
+                <div class="business_box">
+                    <div class="business_left">
+                        <ul>
+                            {%index_case_02%}
+                        </ul>
+                    </div><!--end business_left-->
+                    <div class="business_right">
+                        <h3>联系我们</h3>
+                        <p style="width:220px;">
+                            {%index_case_03%}
+                        </p>
+                    </div><!--end business_right-->
+                </div><!--end business_box-->
+            </div><!--end business-->
+
+            <div class="sorft">
+                <h2 class="sorft_h2">软件介绍</h2>
+                <div class="sorft_box">
+                    <div class="sorft_left">
+                        <h3>flash</h3>
+                        <p> <img src="style/img/page/flash.jpg"  align="left" >　　Flash是动画制作软件最常用的制作软件，它是集动画创作和应用程序于一身的创作软件。Flash广泛用于创建吸引人的应用程序，它们包含丰富的视频、声音、图形和动画。可以在Flash中创建原始内容或者从其它Adobe应用程序。 <a href="/news/about/416/">详情..</a></p>
+                    </div><!--end sorft_left-->
+                    <div class="sorft_right">
+                        <h3>PS</h3>
+                        <p><img src="style/img/page/ps.png" align="left" >　　adobe Photoshop，简称“PS”，是一个由Adobe Systems开发和发行的图像处理软件。Photoshop主要处理以像素所构成的数字图像。使用其众多的编修与绘图工具，可以更有效的进行图片编辑工作。<a href="/news/about/416/">详情..</a></p>
+                    </div><!--end sorft_right-->
+                </div><!--end -->
+            </div><!--end sorft-->
+            <div class="cooperate">
+                <h2 class="cooperate_h2">合作伙伴</h2>
+                <div class="cooperate_box">
+                    <ul>                      
+                        {%ind_news_11%}
+                    </ul>
+                </div>
+            </div><!--end cooperate-->
+            <div class="link">
+                <h2 class="link_h2">友情链接</h2>
+                <div class="link_box">
+                    <!---<ul>
+                        {%ind_news_13%}
+                    </ul>-->
+                    {%index_case_06%}
+                </div><!--end link_box-->
+            </div><!--end link-->
+        </div><!--end page-->
+
+        <div id="footer">
+            <p>
+                {%ICP%}
+            <p>
+        </div><!--end footer-->
+        <div class=""></div><!--end -->
+        <div id=""></div><!--end -->
+
+        <script type="text/javascript">
+        //The banner of index page
+		$(function(){
+			$('#slides').slides({
+				preload: true,
+				preloadImage: '/style/img/banner/loading.gif',
+				play: 5000,
+				pause: 2500,
+				hoverPause: true,
+				animationStart: function(){
+					$('.caption').animate({
+						bottom:-35
+					},100);
+				},
+				animationComplete: function(current){
+					$('.caption').animate({
+						bottom:0
+					},200);
+					if (window.console && console.log) {
+						// example return of current slide number
+						//console.log(current);
+					};
+				}
+			});
+		});
+    </script>
+
+<!-- QQ service start-->
+<script type="text/javascript" src="/style/js/qq01.js"></script>
+<link href="/style/css/qq01.css" rel="stylesheet" type="text/css">
+<div id="KeFuDiv" class="KeFuDiv">
+  <div style="height:55px; overflow:hidden;"><img src="/style/img/qq/up_001.gif" height="55" border="0" usemap="#Map" style="cursor:move;" onmousedown="MoveDiv(KeFuDiv,event);" title="拖动"></div>
+  <div class="KeFuList">
+    <div class="KeFuTitle">会员客服</div>
+    <div class="KeFuItem">
+      <a target="_blank" href="tencent://message/?uin=2534679181&Site=&Menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=1:2534679181:3" alt="有事点这里"></a>
+    </div>
+    <div class="KeFuItem">
+      <a target="_blank" href="tencent://message/?uin=1195727015&Site=&Menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=1:1195727015:2" alt="有事点这里"></a>
+    </div>
+  </div>
+  <div><img src="/style/img/qq/bot_001.gif" border="0"></div>
+  <map name="Map" id="Map">
+    <area shape="circle" coords="105,10,8" href="javascript:" onclick="KeFuDiv.style.display='none';" title="关闭"/>
+  </map>
+</div>
+<script>
+//初始位置
+gID("KeFuDiv").style.top = (document.documentElement.clientHeight - gID("KeFuDiv").offsetHeight)/2 +"px";
+gID("KeFuDiv").style.right = document.documentElement.clientWidth - gID("KeFuDiv").offsetWidth +"px";
+//开始滚动
+ScrollDiv('KeFuDiv');
+</script>
+<!-- QQ service end-->
+
+    </body>
+</html>

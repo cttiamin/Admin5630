@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>{%Atitle%}</title>
+        <meta name="keywords" content="{%keyword%}" />
+        <meta name="description" content="{%discription%}" />
+    <link type="text/css" href="/style/css/style.css" rel="stylesheet">
+    <script type="text/javascript" src="/style/js/jquery-1.4.2.js"></script>
+</head>
+<body>
+<div id="wrapper">
+    <div id="header">
+        <ul id="nav">
+            {%nav%}
+            
+        </ul>
+        <div id="banner">
+            <div id="banner_ad">
+                <div id="focus_box">
+                    <ul id="focus_pic">
+                        <li><a><img src="/style/img/banner001.jpg"></a></li>
+                        <li><a><img src="/style/img/banner002.jpg"></a></li>
+                        <li><a><img src="/style/img/banner003.jpg"></a></li>
+                    </ul>
+                </div>
+            </div>
+            <h2 class="article-h2">{%Atitle%}</h2>
+        </div>
+    </div>
+    <div id="main">
+        <div id="sidebar">
+            <h2>最新动态</h2>
+            <div id="marqueebox0" style="height: 90px; overflow: hidden;">
+                <ul id="subNav">
+                    {%nav05%}
+                </ul>
+            </div>
+        </div>
+        <div id="content" >
+            <div id="article">
+            {%Acontent%}
+            </div>
+            
+        </div>
+
+    </div>
+    <div id="main_bottom"></div>
+    <div id="footer">
+        <p>版权所有： 天九幸福集团有限公司 (www.tjxfjt.com.cn)  {%ICP%} </p>
+    </div>
+</div>
+<!--幻灯片-->
+<script type="text/javascript" src="/style/js/banner.js"></script>
+<!-- 最新动态　滚动 -->
+<script type="text/javascript" src="/style/js/marquee.js"></script>
+</body>
+</html>
+

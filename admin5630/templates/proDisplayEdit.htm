@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+  <head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>088山货网管理系统</title>	  
+        <!-- CSS -->
+        <link rel="stylesheet" href="<?php echo '/'.ADNAME.'/';?>resources/css/inc.css" type="text/css" media="screen" />	  
+		<!-- jQuery -->
+        <script type="text/javascript" src="/style/js/jquery-1.3.2.min.js"></script>
+        <!-- jQuery Configuration -->
+		<script type="text/javascript" src="<?php echo '/'.ADNAME.'/';?>resources/scripts/simpla.jquery.configuration.js"></script>
+    </head>    
+    <body>
+        <div id="jm-right">
+    
+            
+            <!-- 文章列表，添加 -->
+			<div class="content-box"><!-- Start Content Box -->
+				
+				<div class="content-box-header">
+					
+                    <h3>产品修改-> </h3>
+                    <span>
+                        <a href="<?php echo $pageUrl;?>">返回</a> -> 
+                        <a href="<?php echo
+                            $pageUrl."&amp;a=pic&amp;i=".$editQuery['p_id'];?>">图片管理</a>
+                    <span>
+					<div class="clear"></div>
+					
+				</div> <!-- End .content-box-header -->
+				
+				<div class="content-box-content">
+					
+					<div class="tab-content default-tab" id="tab1"> 
+											
+						<form action="#" method="post">
+							
+							<fieldset> 				
+								<p>
+                                <label>文章名称</label>
+										<input class="text-input
+                                        small-input"type="text"
+                                        id="small-input" name="title"
+                                        value="<?php echo $editQuery['p_title']?>"
+                                        /> 
+                                        <input name="editId" type="hidden"
+                                         value="<?php echo $editQuery['p_id']?>"/>
+                                         <span class="input-notification success png_bg">Successful message</span> 
+                                         <br /><small>添加一个栏目，名称不能为空</small></p>   
+                                 <p>    
+                                 <label>淘宝链接(链接标题)</label>
+									<input class="text-input medium-input
+                                    datepicker" type="text" id="medium-input"
+                                    name="tblink" 
+                                    value="<?php echo $editQuery['p_url']?>" />
+								</p>
+                                <p>                                      
+									<label>关键字</label>
+									<input class="text-input medium-input
+                                    datepicker" type="text" id="medium-input"
+                                    name="keyworld" 
+                                    value="<?php echo $editQuery['p_keyworld']?>" /> 
+                                    <span class="input-notification error png_bg">Error message</span>
+								</p>
+								
+								<p>
+									<label>页面标题</label>
+									<input class="text-input medium-input"
+                                    type="text" id="large-input"
+                                    name="page-title"
+                                    value="<?php echo $editQuery['p_ptitle']?>"  />
+								</p>
+
+								<p>
+									<label>是否显示</label>
+                                    <input type="radio" name="state" value="0"
+                                    <?php if($editQuery['p_state']==0)echo "checked=\"checked\""; ?> />
+                                     不显示
+                                     <input type="radio" name="state" value="1" 
+                                    <?php if($editQuery['p_state']==1)echo "checked=\"checked\""; ?> /> 显示
+								</p>
+								<p>
+									<label>是否推荐</label>
+                                    <input type="radio" name="flag" value="0"
+                                    <?php if($editQuery['p_flag']==0)echo "checked=\"checked\""; ?>/>
+                                    不推荐
+                                                                        <input
+                                                                        type="radio"
+                                                                        name="flag"
+                                                                        value="1"
+                                    <?php if($editQuery['p_flag']==1)echo "checked=\"checked\""; ?>/>
+                                    精品推荐
+
+									<input type="radio" name="flag" value="2"
+                                    <?php if($editQuery['p_flag']==2)echo "checked=\"checked\""; ?> /> 
+                                    热销推荐
+                                    <input type="radio" name="flag" value="3"
+                                    <?php if($editQuery['p_flag']==3)echo "checked=\"checked\""; ?> /> 当季推荐
+								</p>								
+								<p>
+									<label>所属栏目</label>              
+									<select name="bid" class="small-input">
+										<option value="0">顶级栏目</option>
+                                        <?php   echo $proDisplaySelectIn; ?>
+									</select> 
+                                </p>
+								<p>
+									<label>库存状态</label>
+                                    <input type="radio" name="stock" value="0"
+                                    <?php if($editQuery['p_stock']==0)echo  "checked=\"checked\""; ?> /> 无货
+					<input type="radio" name="stock" value="1" <?php
+                    if($editQuery['p_stock']==1)echo  "checked=\"checked\""; ?> /> 现货
+					<input type="radio" name="stock" value="2" <?php
+                    if($editQuery['p_stock']==2)echo  "checked=\"checked\""; ?> /> 预定                                    
+                                </p>
+
+								<p>
+									<label>库存数量</label>
+									<input class="text-input small-input"
+                                    type="text" id="large-input"
+                                    name="stock-sum" value="<?php echo
+                                    $editQuery['p_stockSum'];?>" /><span>填写数字</span>
+								</p>
+								<p>
+									<label>查询次数</label>
+									<input class="text-input small-input"
+                                    type="text" id="large-input"
+                                    name="cquery" value="<?php echo $editQuery['p_query']?>"/><span>填写数字</span>
+								</p>
+								<p>
+                                    <label>商品编号</label>
+									<input class="text-input small-input"
+                                    type="text" id="large-input"
+                                    name="bian" value="<?php echo $editQuery['p_bian']?>"/>
+                                    <span><a href="#">重新生成编号</a>:随机生成
+                                    <?php echo intval(time()+365*2-100000000); ?></span>
+								</p>
+								<p>
+                                    <label>价格</label>
+									<input class="text-input small-input"
+                                    type="text" id="large-input"
+                                    name="price"  
+                                    value="<?php echo $editQuery['p_price']?>"/>
+                                    <span>填写小数或数字</span>
+                                </p>
+								<p>
+                                    <label>进货价</label>
+									<input class="text-input small-input"
+                                    type="text" id="large-input"
+                                    name="jprice" value="<?php echo
+                                    $editQuery['pn_jprice']?>"/>
+                                    <span>填写小数或数字</span>
+								</p>
+								<p>
+                                    <label>邮费</label>
+									<input class="text-input small-input"
+                                    type="text" id="large-input"
+                                    name="mprice" value="<?php echo
+                                    $editQuery['pn_mprice']?>"/> <span>填写小数或数字</span>
+                                </p>
+ 								<p>
+                                    <label>重量说明</label>
+									<input class="text-input small-input"
+                                    type="text" id="large-input"
+                                    name="weight" value="<?php echo
+                                    $editQuery['pn_weight']?>"/>  
+                                    </p>								
+                                    <p>
+                                    <label>促销信息</label>
+									<input class="text-input small-input"
+                                    type="text" id="large-input"
+                                    name="promotion" value="<?php echo
+                                    $editQuery['pn_promotion']?>"/>  
+								</p>                                   
+								<p>
+                                    <label>产地</label>
+									<input class="text-input small-input"
+                                    type="text" id="large-input"
+                                    name="address" value="<?php echo
+                                    $editQuery['pn_address']?>"/> 
+								</p>
+
+								<p>
+								    <label>描述</label>
+									<textarea class="text-input textarea
+                                        wysiwyg" id="textarea"
+                                        name="discription"
+                                        cols="79" rows="3"><?php echo
+                                        $editQuery['pn_discription']?></textarea>
+                                </p>
+                                <p>
+									<label>参数</label>
+									<textarea class="text-input textarea
+                                        wysiwyg" id="parameter"
+                                        name="parameter"
+                                        cols="79" rows="6"><?php echo
+                                        $editQuery['pn_remark']?></textarea>
+<!--<script  type="text/javascript" src="/admin5630/edit/whizzywig.js"></script>
+<script type="text/javascript">buttonPath =
+    "/admin5630/edit/images/";makeWhizzyWig("parameter", "all");</script>-->
+                                </p>
+
+								<p>
+                                <label>内容</label>                              
+                                <?php
+		include(JMADMIN."/fckeditor/fckeditor.php") ;
+		//PHP用$_POST['FCKeditor1']得到FCKeditor1的值。
+		$oFCKeditor = new FCKeditor('content') ;//实例化
+		$oFCKeditor->BasePath = 'fckeditor/';
+		$oFCKeditor->Width = '99%' ;
+		$oFCKeditor->Height = '300' ;
+		$oFCKeditor->Value=$editQuery['pn_content'];	//默认值
+		$oFCKeditor->Create() ;
+		?>
+								</p>
+															
+								<p>
+									<input class="button" type="submit"
+                                    value="确定提交" name="Edit" />
+								</p>
+								
+							</fieldset>
+							
+							<div class="clear"></div><!-- End .clear -->
+							
+						</form>
+						
+					</div> <!-- End #tab2 -->        
+					
+				</div> <!-- End .content-box-content -->
+				
+			</div> <!-- End .content-box -->
+            </div><!-- End #jm-right -->
+
+
+<div class="clear"></div> <!-- End .clear -->
+
+	</body>
+</html>

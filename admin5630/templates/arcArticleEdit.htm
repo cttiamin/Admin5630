@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+  <head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>088山货网管理系统</title>	  
+        <!-- CSS -->
+        <link rel="stylesheet" href="<?php echo '/'.ADNAME.'/';?>resources/css/inc.css" type="text/css" media="screen" />	  
+		<!-- jQuery -->
+        <script type="text/javascript" src="/style/js/jquery-1.3.2.min.js"></script>
+        <!-- jQuery Configuration -->
+		<script type="text/javascript" src="<?php echo '/'.ADNAME.'/';?>resources/scripts/simpla.jquery.configuration.js"></script>
+    </head>    
+    <body>
+        <div id="jm-right">
+    
+            
+            <!-- 文章列表，添加 -->
+			<div class="content-box"><!-- Start Content Box -->
+				
+				<div class="content-box-header">
+					
+                    <h3>文章修改-><?php  //echo $editQuery['class_title'];?></h3>
+                    <span><a href="<?php echo $pageUrl;?>">返回</a> </span>					
+					<div class="clear"></div>
+					
+				</div> <!-- End .content-box-header -->
+				
+				<div class="content-box-content">
+					
+					<div class="tab-content default-tab" id="tab1"> 
+											
+						<form action="" method="post">
+							
+							<fieldset> <!-- Set class to "column-left" or "column-right" on fieldsets to divide the form into columns -->
+								
+								<p>
+                                <label>文章名称</label>
+										<input class="text-input
+                                        small-input"type="text"
+                                        id="small-input" name="title"
+                                        value="<?php echo $editQuery['a_title']; ?>"
+                                        />
+                                        <input name="editId" type="hidden"
+                                        value="<?php echo $editQuery['a_id']?>"/>
+                                        <span class="input-notification success png_bg">必填, 添加一篇内容，名称不能为空</span></p>   
+                                <p>    
+									<label>添加时间</label>
+									<input class="text-input small-input
+                                    datepicker" type="text" id="medium-input"
+                                    name="ctime" value="<?php echo $editQuery['createtime'];?>" /> 
+                                    <?php echo date('Y-m-d H:i:s', $editQuery['createtime']); ?>
+                                    <span class="input-notification success png_bg">时间戳自动生成, 不须修改</span>
+								</p>
+                                <p>    
+									<label>修改时间</label>
+									<input class="text-input small-input
+                                    datepicker" type="text" id="medium-input"
+                                    name="utime" value="<?php echo time();?>" /> 
+									<?php echo date('Y-m-d H:i:s', $editQuery['uptime']); ?>
+							        <span class="input-notification success png_bg">时间戳自动生成, 不须修改</span>
+							 	</p>
+
+                                <p>                                      
+									<label>关键字</label>
+									<input class="text-input medium-input
+                                    datepicker" type="text" id="medium-input"
+                                    name="keyworld" value="<?php echo
+                                    $editQuery['keywrod']; ?>" /><span class="input-notification success png_bg">显示到页面keyworld标签中</span>
+								</p>
+
+								<p>
+									<label>页面标题</label>
+									<input class="text-input medium-input"
+                                    type="text" id="large-input"
+                                    name="page-title" value="<?php echo
+                                    $editQuery['page_title']; ?>" />
+                                    <span class="input-notification success png_bg">显示到页面title标签中</span>
+								</p>
+
+								<p>
+									<label>是否显示</label>
+                                    <input type="radio" name="state" value="0"
+                                    <?php if($editQuery['a_state']==0)echo "checked=\"checked\"";?> />
+                                     不显示
+                                     <input type="radio" name="state" value="1" 
+                                     <?php if($editQuery['a_state']==1)echo "checked=\"checked\"";?> /> 显示
+                                     <span class="input-notification success png_bg">设置此篇内容是否显示</span>
+								</p>
+								<p>
+									<label>是否推荐</label>
+									<input type="radio" name="flag" value="0"
+                            <?php if($editQuery['flag']==0)echo "checked=\"checked\"";?> />
+                                     不推荐
+									<input type="radio" name="flag" value="1"
+                            <?php if($editQuery['flag']==1)echo "checked=\"checked\"";?> /> 推荐
+                            <input type="radio" name="flag" value="2"
+                            <?php if($editQuery['flag']==2)echo "checked=\"checked\"";?>/> 重点推荐
+                            <span class="input-notification success png_bg">设置此篇内容权重, 在列表页面的排序先后</span>
+                            </p>
+
+								<p>
+									<label>所属栏目</label>              
+									<select name="bid" class="small-input">
+										<option value="0">顶级栏目</option>
+                                        <?php  echo $arcActicleSelectIn; ?>
+									</select> 
+									<a href="/libs/plus/upfiles.php" target="_blank">上传图片</a>
+                                </p>
+<?php if( $authorityArray[4] == 1) {?>
+                                <p>    
+									<label>链接地址</label>
+									<input class="text-input medium-input
+                                    datepicker" type="text" id="medium-input"
+                                    name="link_title" value="<?php echo
+                                    $editQuery['link_title']; ?>" /> 
+                                    <span class="input-notification success png_bg">链接的目标URL</span>
+                                </p>     
+<?php } else {?>
+<p><input type="hidden" name="link_title" /></p>
+<?php } ?>
+<?php if( $authorityArray[3] == 1) {?>
+                                <p>    
+									<label>Logo图片</label>
+                                    <input class="text-input medium-input datepicker" type="text" id="medium-input" name="logo" value="<?php echo $editQuery['logo']; ?>"/> 
+                                    <span class="input-notification success png_bg">显示此内容图片,输入图片URL</span>
+                                    </p>
+<?php } else {?>
+<p><input type="hidden" name="logo" /></p>
+<?php } ?>
+<?php if( $authorityArray[5] == 1) {?>                                    
+                                <p>
+									<label>视频类型</label>
+                                    <input type="radio" name="filetype" value="0" <?php if($editQuery['filetype']==0)echo "checked=\"checked\"";?> />swf格式
+                                    <input type="radio" name="filetype" value="1" <?php if($editQuery['filetype']==1)echo "checked=\"checked\"";?>/>flv格式
+                                    <input type="radio" name="filetype" value="2"  <?php if($editQuery['filetype']==2)echo "checked=\"checked\"";?>  />不上传
+                                    <span class="input-notification success png_bg">视频文件类型,flv或swf,此选项必须与"视频文件"保持一致</span>
+                                </p>
+                                <p>    
+									<label>视频文件</label>
+                                    <input class="text-input medium-input datepicker" type="text" id="medium-input" name="file" value="<?php echo $editQuery['file']; ?>"/>
+                                    <span class="input-notification success png_bg">显示此内容视频或flash,输入视频URL</span>
+                                </p>
+                                <p>    
+									<label>项目类型</label>
+                                    <input class="text-input medium-input datepicker" type="text" id="medium-input" name="arctype" value="<?php echo $editQuery['arctype']; ?>"/> 
+                                    <span class="input-notification success png_bg">项目类型说明</span>
+                                    </p>
+                                                                <p>    
+						        <label>服务客户</label>
+                                    <input class="text-input medium-input datepicker" type="text" id="medium-input" name="kehutype" value="<?php echo $editQuery['kehutype']; ?>"/> 
+                                    <span class="input-notification success png_bg">服务客户</span>
+                               </p>   
+<?php } else {?>
+<p><input type="hidden" name="filetype" value="0"/>
+<input type="hidden" name="file"  value="0"/>
+<input type="hidden" name="arctype" />
+<input type="hidden" name="kehutype" />
+</p>
+<?php } ?>
+<?php if( $authorityArray[1] == 1) {?> 
+								<p>
+									<label>描述</label>
+									<textarea class="text-input textarea
+                                        wysiwyg"5 id="textarea"
+                                        name="discription"
+                                        cols="79" rows="5"><?php echo $editQuery['discription']; ?></textarea>
+                                    </p>
+<?php } else {?>
+<p><input type="hidden" name="discription" /></p>
+<?php } ?>
+<?php if( $authorityArray[2] == 1) {?>                                    
+								<p>
+                                <label>内容</label>                              
+                                <?php
+		include(JMADMIN."/fckeditor/fckeditor.php") ;
+		//PHP用$_POST['FCKeditor1']得到FCKeditor1的值。
+		$oFCKeditor = new FCKeditor('content') ;//实例化
+		$oFCKeditor->BasePath = 'fckeditor/';
+		$oFCKeditor->Width = '99%' ;
+		$oFCKeditor->Height = '400' ;
+		$oFCKeditor->Value=$editQuery['content'];	//默认值
+		$oFCKeditor->Create() ;
+		?>
+								</p>
+<?php } else {?>
+<input type="hidden" name="content"/>
+<?php } ?>																
+								<p>
+									<input class="button" type="submit"  value="确定提交" name="Edit" />
+								</p>
+								
+							</fieldset>
+							
+							<div class="clear"></div><!-- End .clear -->
+							
+						</form>
+						
+					</div> <!-- End #tab2 -->        
+					
+				</div> <!-- End .content-box-content -->
+				
+			</div> <!-- End .content-box -->
+            </div><!-- End #jm-right -->
+
+
+<div class="clear"></div> <!-- End .clear -->
+
+	</body>
+</html>

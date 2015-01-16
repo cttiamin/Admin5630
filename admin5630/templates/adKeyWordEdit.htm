@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>健民网管理系统</title>	  
+        <!-- CSS -->
+        <link rel="stylesheet" href="<?php echo '/'.ADNAME.'/';?>resources/css/inc.css" type="text/css" media="screen" />	  
+		<!-- jQuery -->
+        <script type="text/javascript" src="/style/js/jquery-1.3.2.min.js"></script>
+        <!-- jQuery Configuration -->
+		<script type="text/javascript" src="<?php echo '/'.ADNAME.'/';?>resources/scripts/simpla.jquery.configuration.js"></script>
+    </head>    
+    <body>
+        <div id="jm-right">
+    
+            
+            <!-- 文章列表，添加 -->
+			<div class="content-box"><!-- Start Content Box -->
+				
+				<div class="content-box-header">
+					
+                    <h3>文章修改-><?php  //echo $editQuery['class_title'];?></h3>
+                    <span><a href="<?php echo $pageUrl;?>">返回</a> </span>					
+					<div class="clear"></div>
+					
+				</div> <!-- End .content-box-header -->
+				
+				<div class="content-box-content">
+					
+					<div class="tab-content default-tab" id="tab1"> 
+											
+
+						<form action="" method="post">
+							
+							<fieldset> <!-- Set class to "column-left" or "column-right" on fieldsets to divide the form into columns -->
+								<p>
+                                <label>关键字</label>
+								<input name="editId" type="hidden" value="<?php echo $editQuery['k_id'];?>">
+										<input class="text-input small-input"type="text" id="small-input" name="keyword" value="<?php echo $editQuery['k_name']?>" /> <span class="input-notification success png_bg">Successful message</span> 
+                                         <br /><small>添加一个关键字，名称不能为空</small></p>  
+                                 <p>    
+									<label>排序编号</label>
+									<input class="text-input small-input datepicker" type="text" id="medium-input" name="order" value="<?php echo $editQuery['k_order']?>" /> 填写数字
+								</p>
+                                 <p>    
+									<label>链接</label>
+									<input class="text-input medium-input datepicker" type="text" id="medium-input" name="link" value="<?php echo $editQuery['k_link']?>"/> 
+								</p>
+								<p>
+									<label>优化难度</label>
+									<input class="text-input small-input" type="text" id="large-input"  name="deffc"  value="<?php echo $editQuery['k_deff']?>"/>填写数字
+									<label>重要性</label>
+									<input class="text-input small-input" type="text" id="large-input"  name="important" value="<?php echo $editQuery['k_important']?>" />填写数字							
+								<p>
+									<label>百度指数</label>
+									<input class="text-input small-input" type="text" id="large-input"  name="baidu"  value="<?php echo $editQuery['k_baidu']?>"/>填写数字5位
+									<label>谷歌流量</label>
+									<input class="text-input small-input" type="text" id="large-input"  name="google"  value="<?php echo $editQuery['k_google']?>"/>填写数字5位						
+								</p>
+								<p>
+									<label>描述</label>
+									<textarea class="text-input textarea wysiwyg" id="textarea"  name="remark" cols="79" rows="5"><?php echo $editQuery['k_remark']?></textarea>
+								</p>
+								<p>
+									<input class="button" type="submit"  value="确定提交" name="Update" />
+								</p>
+								
+							</fieldset>
+							
+							<div class="clear"></div><!-- End .clear -->
+							
+						</form>
+						
+					</div> <!-- End #tab2 -->        
+					
+				</div> <!-- End .content-box-content -->
+				
+			</div> <!-- End .content-box -->
+            </div><!-- End #jm-right -->
+
+
+<div class="clear"></div> <!-- End .clear -->
+
+	</body>
+</html>

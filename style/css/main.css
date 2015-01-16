@@ -1,0 +1,117 @@
+#wrapper {
+    width: 1280px;  margin: 0 auto;
+}
+#header { padding: 30px 0px 0px 0px; height: 510px; background: url("../img/header_bg.jpg");}
+#banner { float:left; width: 664px; }
+#banner #banner_ad { height: 409px; padding: 5px; background-color: #fff;}
+#banner h2 { padding: 45px 0px 0px 42px; font-size: 22px; color: #595757;}
+#banner .article-h2 { text-align:center; /* margin-left:-42px !important; */ } 
+
+
+#main {clear:both; overflow:hidden; background: url("../img/main_bg.jpg") repeat-y;}
+
+#sidebar {width:219px; min-height:250px;  float: left; padding: 60px 0px 0px 174px;
+    position: relative; left: 0; top: 0;}
+
+#sidebar h2 {font-size:22px; line-height:50px; padding-bottom:20px; }
+#sidebar #subNav { color:#595757;  width:200px; }
+#sidebar #subNav li {line-height: 32px;}
+#marqueebox0 { position: relative; left:-125px;  width: 390px; line-height:60px;}
+#marqueebox0 #subNav {  width: 325px;}
+/*
+#marqueebox0 #subNav li a { display:block; height:30px; line-height:60px; padding-left:20px;
+background:url("../img/ioc003.jpg") no-repeat 5px center; } 
+#marqueebox0 #subNav li a:hover
+ { background:url("../img/ioc003.jpg") no-repeat 7px center;  }
+*/
+#content { width:887px; float:left; }
+#content #company, #content #leader,#content #leaderPhoto,#content #article { width: 600px; padding:10px 36px 0px 38px; clear: both;}
+#content #company img, #content #leader img   { float: left; padding:0px  15px 15px 0px;}
+#content #company p, #content #leader p { text-indent:20px;}
+#content #leader h2 { width:582px;  font-size: 22px; color:#595757; margin-left: 4px; border-bottom: 5px solid #f7f8f8;
+margin-bottom:15px; }
+#content #company p strong, #content #leader p strong, #content #article p strong {font-weight: bold;}
+
+/*
+#content #leaderPhoto { clear: both; overflow: hidden; }
+#content #leaderPhoto li { display: block;  float: left; width: 142px;height: 150px; margin: 0 10px 10px 0;}
+#content #leaderPhoto li img { width: 142px; height: 107px; }
+#content #leaderPhoto li p {text-align: center; line-height: 16px;}
+*/
+#content #article {min-height:300px;}
+#content #article p{ margin-bottom:20px;font-size:13px; }
+#content #article h1 { font-size:20px; margin-bottom:20px;  font-weight:bold; text-align:center;}
+#content #article h2 {font-size:18px;  margin-bottom:20px;  font-weight:bold; text-align:center;}
+#content #article h3 { margin-bottom:20px;  font-weight:bold; text-align:center;}
+#content #article h4 {font-size:16px;  margin-bottom:20px; font-weight:bold; }
+
+#content #icp { display:block; width:200px; font-size: 14px; color:#595757; position: relative; left: -200px; bottom:60px; height:20px;}
+
+#main_bottom {height: 31px;  background: url("../img/content_bottom_bg.jpg") no-repeat top left; margin-top: -1px; +margin-top:-3px;}
+
+#leaderPhoto { clear: both; overflow: hidden; background-color:#efefef; padding:0px 50px 0px  50px;}
+#leaderPhoto li { border:1px solid #ccc; display:block;  float:left; width:260px; min-height:240px; margin: 0 30px 15px 0;background-color:#fff; padding:5px 5px 0px 5px; text-align:center;}
+#leaderPhoto li img { width: 260px; height:200px; }
+#leaderPhoto li p { font-size:12px; text-align: center; line-height: 20px;}
+
+#footer {height: 80px; padding-top: 22px; background: url("../img/bottom.jpg") no-repeat; text-align: center; color: #fff; font-size: 14px; line-height: 24px;}
+/*************************************
+ * 招贤纳士
+ * */
+#recruit{width:600px; margin-top:50px;}
+#recruit td {font-size:12px}
+#recruit p{}
+#recruit a{ font-size:12px;}
+/*岗位先项卡切换*/
+.recruit_menu { height:28px; padding-left:73px;}
+.recruit_menu li{ float:left; height:28px; line-height:28px; width:85px; 
+    text-align:center; margin-right:3px; cursor:pointer; border:1px solid #ccc; 
+    border-bottom:none; background-image:url("/style/img/recruit05.jpg"); color:#fff;
+    -moz-border-radius: 5px 5px 0px 0px; 
+    -webkit-border-radius:5px 5px 0px 0px;
+    border-radius: 5px 5px 0 0;   
+}
+#recruit .recruit_menu  a  {color:#fff;}
+#recruit .recruit_menu li.selected { color:#000; font-weight:bold; 
+    background-image:none;}
+#recruit .recruit_menu li.selected a {color:#000; cursor:pointer; font-weight:bold;}
+#recruit .recruit_menu li.hover{ cursor:pointer; font-weight:bold; }
+#recruit .recruit_box { border:1px solid #ccc; 
+    -moz-border-radius: 5px;  -webkit-border-radius:5px ; border-radius: 5px;}
+#recruit .recruit_box p{ padding:10px; margin-bottom:1px !important;}
+/*岗位介绍详细说明*/
+#article #recruit .recruit_box h3 {padding:23px 0 10px 10px; text-align:left;
+    font-size:14px; color:#D3852C; }
+#article #recruit .recruit_box h4 {padding:0 0 10px 10px; text-align:left; 
+    font-size:12px; margin:0;  text-indent:20px; }
+#article #recruit .recruit_box p {padding:0 0 10px 10px; text-align:left; 
+    font-size:12px; text-indent:20px; }
+#article #recruit .recruit_box .recruit_email {color:#D3852C; font-weight:bold;
+padding:30px 0 30px 10px; }
+#article #recruit .recruit_box .market_table{  width:97%; }
+#article #recruit .recruit_box .market_table th{ font-size:14px; color:#D3852C;
+ font-weight:bold; padding-left:20px;}
+#article #recruit .recruit_box .market_table td {line-height:22px;}
+/*岗位数列表*/
+#recruit .recruit_table{padding:5px; font-size:14px; width:97%; margin:0 auto;}
+#recruit .recruit_table thead tr {border-bottom:3px solid #DE9D53; color:#B27635; 
+    line-height:50px;}
+#recruit .recruit_table thead tr th{font-weight:bold; text-align:center;}
+#recruit .recruit_table tbody tr {border-top:1px solid #8E8C8B; }
+#recruit .recruit_table tbody .border_none{ border-top:none; }
+#recruit .recruit_table tbody tr td {padding:5px; line-height:50px;}
+#recruit .recruit_table tfoot tr {border-top:4px solid #DE9D53; line-height: 55px;}
+#recruit .recruit_table tfoot .recruite_button {background-color:#DCDCDC;
+    -moz-border-radius: 5px; -webkit-border-radius:5px; border-radius: 5px;
+display:inline-block;  width:60px; text-align:center; line-height:20px; 
+cursor: pointer;}
+#recruit .recruit_table tfoot .recruite_button2 { background-color:#DCDCDC;
+width: 30px; line-height: 20px;
+-moz-border-radius: 5px; -webkit-border-radius:5px; border-radius: 5px;
+}
+
+
+.p10{padding:10px;}
+.red{color:red;}
+.red a {color:red;}
+

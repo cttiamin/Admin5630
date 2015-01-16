@@ -1,0 +1,116 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>山货网管理系统</title>	  
+        <!-- CSS -->
+        <link rel="stylesheet" href="<?php echo '/'.ADNAME.'/';?>resources/css/inc.css" type="text/css" media="screen" />	  
+		<!-- jQuery -->
+        <script type="text/javascript" src="/style/js/jquery-1.3.2.min.js"></script>
+        <script type="text/javascript" src="<?php echo '/'.ADNAME.'/';?>resources/scripts/simpla.jquery.configuration.js"></script>        
+    </head>    
+    <body>
+        <div id="jm-right">         
+            <!-- 栏目列表，添加 -->
+			<div class="content-box"><!-- Start Content Box -->
+				
+				<div class="content-box-header">
+				
+					<h3>会员修改</h3>
+<span>
+<a href="/admin5630/userList.php?p=<?php echo $p;?>">返回</a>
+</span>
+
+					<div class="clear"></div>
+					
+				</div> <!-- End .content-box-header -->
+				
+				<div class="content-box-content">
+
+					<div class="tab-content default-tab" id="tab1"> 
+
+ 						<form action="#" method="post">
+							
+							<fieldset> 							
+							    <p>
+									<label>会员名称</label>
+									<input class="text-input small-input"
+                                    type="text" id="small-input" name="name"
+                                    value="<?php echo $editQuery['name']; ?>" />
+                                    
+                                    <input  type="hidden" name="editId"
+                                    value="<?php echo $editId; ?>" />
+                                </p> 
+							    <p>
+									<label>邮箱:</label>
+									<input class="text-input
+                                    small-input"type="text" id="small-input"
+                                    name="mail" value="<?php echo
+                                    $editQuery['mail']; ?>"/>
+                                </p>
+								
+							    <p>
+									<label>收货姓名</label>
+									<input class="text-input
+                                    small-input"type="text" id="small-input"
+                                    name="rename" value="<?php echo
+                                    $editQuery['rname']; ?>"/>
+                                </p>
+							    <p>
+									<label>收货地址</label>
+									<input class="text-input
+                                    large-input"type="text" id="small-input"
+                                    name="address" value="<?php echo
+                                    $editQuery['address']; ?>" />
+                                </p>      
+							    <p>
+									<label>手机号码</label>
+									<input class="text-input
+                                    small-input"type="text" id="small-input"
+                                    name="tel" value="<?php echo $editQuery['tel']; ?>"/>
+                                </p>
+							    <p>
+									<label>坐机号码</label>
+									<input class="text-input
+                                    small-input"type="text" id="small-input"
+                                    name="phone" value="<?php echo
+                                    $editQuery['phone']; ?>" />
+                                </p>
+							    <p>
+									<label>邮政编码</label>
+									<input class="text-input
+                                    small-input"type="text" id="small-input"
+                                    name="zip" value="<?php echo
+                                    $editQuery['post_code']; ?>"/>
+                                </p>
+							    <p>
+									<label>注册信息</label><br/>
+                                    注册时间: <?php echo date('Y-m-d H:i',$editQuery['reg_time']) ?><br/>
+                                    最后登陆时间:<?php echo date('Y-m-d
+                                    H:i',$editQuery['login_last_time']) ?> <br/>
+                                    最后登陆IP: <?php echo $editQuery['login_last_ip']; ?><br/>
+                                    登陆次数: <?php echo $editQuery['login_count']; ?>
+                                </p>
+								<p>
+									<input class="button" type="submit"
+                                    value="确定提交" name="Edit" />
+								</p>
+
+								
+							</fieldset>
+							
+							<div class="clear"></div><!-- End .clear -->
+							
+						</form>
+					
+					</div> <!-- End #tab1 --> 
+					
+				</div> <!-- End .content-box-content -->
+				
+			</div> <!-- End .content-box 栏目列表，添加 -->
+            </div><!-- End #jm-right -->
+
+            <div class="clear"></div> <!-- End .clear -->  
+
+    </body>
+</html>

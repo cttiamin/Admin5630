@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+  <head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>088山货网管理系统</title>	  
+        <!-- CSS -->
+        <link rel="stylesheet" href="<?php echo '/'.ADNAME.'/';?>resources/css/inc.css" type="text/css" media="screen" />	  
+		<!-- jQuery -->
+        <script type="text/javascript" src="/style/js/jquery-1.3.2.min.js"></script>
+        <!-- jQuery Configuration -->
+		<script type="text/javascript" src="<?php echo '/'.ADNAME.'/';?>resources/scripts/simpla.jquery.configuration.js"></script>
+    </head>    
+    <body>
+           <div id="jm-right">
+            <!-- 栏目列表，添加 -->
+			<div class="content-box">				
+				<div class="content-box-header">
+					
+                    <h3>产品列表管理</h3>
+                    
+					<ul class="content-box-tabs">
+						<li><a href="#tab1" class="default-tab">列表</a></li> 
+						<li><a href="#tab2">添加</a></li>
+					</ul>
+				
+					<div class="clear"></div>
+					
+				</div> <!-- End .content-box-header -->
+				
+				<div class="content-box-content">
+					
+					<div class="tab-content default-tab" id="tab1"> 
+						<table>							
+                            <thead>
+								<tr>
+                                    <th colspan="6">
+	 	            <form name="class-link" action="proDisplay.php">
+						<select name="c">
+                            <?php echo $proDisplaySelectIn; ?>   
+                        </select>
+                        关键字：<input type="text" name="s-text" />
+                        <!--时期：从<input type="text" name="s-in" />
+                        到<input type="text" name="s-to" />-->
+                       <input class="button" type="submit" value="转到" name="Clink" />
+                    </form>	   
+                                    </th>
+								</tr>
+								<tr>
+								   <th><input class="check-all" type="checkbox" /></th>
+								   <th>标题</th>
+                                   <th>显示</th>
+                                   <th>级别</th>
+                                   <th>修改时间</th>
+								   <th>操作</th>
+								</tr>								
+							</thead>
+						 
+							<tfoot>
+								<tr>
+									<td colspan="6">
+										<div class="bulk-actions align-left">
+											<select name="dropdown">
+												<option value="option1">移动到..</option>
+												<option value="option2">修改</option>
+												<option value="option3">删除</option>
+                                            </select>
+
+                                            <a class="button" href="#">执行</a>
+
+                                        </div>
+                                        <!-- .pagination 分页模块 -->
+                                        <?php echo $pageAdStr; ?>
+                                        <!-- End .pagination -->
+										<div class="clear"></div>
+									</td>
+								</tr>
+							</tfoot>
+						 
+                            <tbody>   
+<?php
+foreach ( $proDisplayList as $k=>$v)
+{
+	if($v[5]==0)
+	{
+		$v[5] = "不显示";
+	}
+	else
+	{ 
+		$v[5] = "显示"; 
+	}
+	$proDisplay->str = '';
+?>                                
+								<tr>
+                                    <td><input type="checkbox" /></td>
+                                    <td><?php echo $strInc->cut_str($v[2],19) ;?>
+									<a href="<?php echo WEBURL.$proDisplay->proChannelUrl($v[1])."/".$v[0];?>" title="" target="_blank">[浏览]</a>
+									
+									
+									</td>
+									<td><a href="#" title="title"><?php echo $v[5] ;?></a></td>
+									<td><?php echo $v[3];?></td>
+									<td><?php echo $v[4];?></td>
+									<td>
+										<!-- Icons -->
+										 <a href="<?php echo $pageUrl;?>&amp;i=<?php echo $v[0]; ?>" title="Edit"><img
+                                             src="resources/images/icons/pencil.png"
+                                             alt="修改" /></a>
+
+										 <a href="<?php echo
+                                             $pageUrl;?>&amp;a=pic&amp;i=<?php echo $v[0]; ?>" title="Edit Meta"><img
+                                             src="resources/images/icons/hammer_screwdriver.png" alt="改名" /></a>
+
+                                         <a href="<?php echo $pageUrl;?>&amp;del=<?php echo $v[0]; ?>"" title="Delete"><img
+                                             src="resources/images/icons/cross.png"
+                                             alt="删除" /></a>
+									</td>
+                                </tr>
+<?php } ?>  
+                                
+					    </tbody>
+						</table>  
+					
+					</div> <!-- End #tab1 -->
+					
+					<div class="tab-content" id="tab2">
+					
+						<form action="#" method="post">
+							
+							<fieldset>
+								
+								<p>
+                                <label>文章名称</label>
+										<input class="text-input
+                                        small-input"type="text"
+                                        id="small-input" name="title"
+                                         /> <span class="input-notification success png_bg">Successful message</span> 
+                                         <br /><small>添加一个栏目，名称不能为空</small></p>   
+                                 <p>    
+                                 <label>淘宝链接(链接标题)</label>
+									<input class="text-input medium-input
+                                    datepicker" type="text" id="medium-input"
+                                    name="tblink" /> 
+								</p>
+                                <p>                                      
+									<label>关键字</label>
+									<input class="text-input medium-input
+                                    datepicker" type="text" id="medium-input"
+                                    name="keyworld" /> <span class="input-notification error png_bg">Error message</span>
+								</p>
+								
+								<p>
+									<label>页面标题</label>
+									<input class="text-input medium-input"
+                                    type="text" id="large-input"
+                                    name="page-title"  />
+								</p>
+
+								<p>
+									<label>是否显示</label>
+									<input type="radio" name="state" value="0" />
+                                     不显示
+									<input type="radio" name="state" value="1" checked="checked" /> 显示
+								</p>
+								<p>
+                                <label>是否推荐</label>
+                                    <input type="radio" name="flag" value="0" />
+                                     不推荐
+									<input type="radio" name="flag" value="1" />
+                                     精品推荐
+									<input type="radio" name="flag" value="2"
+                                    checked="checked" /> 热销推荐
+                                    <input type="radio" name="flag"  value="3"/> 当季推荐
+                                    
+								</p>								
+								<p>
+									<label>所属栏目</label>              
+									<select name="bid" class="small-input">
+										<option value="0">顶级栏目</option>
+                                        <?php   echo $proDisplaySelectIn; ?>
+									</select> 
+                                </p>
+
+								<p>
+									<label>库存状态</label>
+ 					<input type="radio" name="stock" value="0" /> 无货
+					<input type="radio" name="stock" value="1" checked="checked" /> 现货
+					<input type="radio" name="stock" value="2"/> 预定                                    
+                                </p>
+ 								<p>
+									<label>库存数量</label>
+									<input class="text-input small-input"
+                                    type="text" id="large-input"
+                                    name="stock-sum"  /><span>填写数字</span>
+								</p>
+                                   
+								<p>
+									<label>查询次数</label>
+									<input class="text-input small-input"
+                                    type="text" id="large-input"
+                                    name="cquery"  /><span>填写数字</span>
+								</p>
+								<p>
+                                    <label>商品编号</label>
+									<input class="text-input small-input"
+                                    type="text" id="large-input"
+                                    name="bian" value="<?php echo
+                                    time()+(365*3)-100000000; ?>"/>
+								</p>
+								<p>
+                                    <label>价格</label>
+									<input class="text-input small-input"
+                                    type="text" id="large-input"
+                                    name="price"  /><span>填写小数或数字</span>
+                                </p>
+								<p>
+                                    <label>进货价</label>
+									<input class="text-input small-input"
+                                    type="text" id="large-input"
+                                    name="jprice"  /><span>填写小数或数字</span>
+								</p>
+								<p>
+                                    <label>邮费</label>
+									<input class="text-input small-input"
+                                    type="text" id="large-input"
+                                    name="mprice"  /><span>填写小数或数字</span>
+                                </p>
+ 								<p>
+                                    <label>重量说明</label>
+									<input class="text-input small-input"
+                                    type="text" id="large-input"
+                                    name="weight"  />
+                                    </p>								
+                                    <p>
+                                    <label>促销信息</label>
+									<input class="text-input small-input"
+                                    type="text" id="large-input"
+                                    name="promotion"  />
+								</p>                                   
+								<p>
+                                    <label>产地</label>
+									<input class="text-input small-input"
+                                    type="text" id="large-input"
+                                    name="address"  />
+								</p>
+
+								<p>
+								    <label>描述</label>
+									<textarea class="text-input textarea
+                                        wysiwyg"5 id="textarea"
+                                        name="discription"
+                                        cols="79" rows="3"></textarea>
+                                </p>
+                                <p>
+									<label>参数</label>
+									<textarea class="text-input textarea
+                                        wysiwyg"5 id="textarea"
+                                        name="parameter"
+                                        cols="79" rows="6"></textarea>
+                                </p>
+
+								<p>
+                                <label>内容</label>                              
+                                <?php
+		include(JMADMIN."/fckeditor/fckeditor.php") ;
+		//PHP用$_POST['FCKeditor1']得到FCKeditor1的值。
+		$oFCKeditor = new FCKeditor('content') ;//实例化
+		$oFCKeditor->BasePath = 'fckeditor/';
+		$oFCKeditor->Width = '99%' ;
+		$oFCKeditor->Height = '300' ;
+		$oFCKeditor->Value='输入内容';	//默认值
+		$oFCKeditor->Create() ;
+		?>
+								</p>
+								
+								<p>
+									<input class="button" type="submit"   value="确定提交" name="Add" />
+								</p>
+
+								
+							</fieldset>
+							
+							<div class="clear"></div><!-- End .clear -->
+							
+						</form>
+						
+					</div> <!-- End #tab2 -->        
+					
+				</div> <!-- End .content-box-content -->
+				
+			</div> <!-- End .content-box 栏目列表，添加 -->
+        
+    </div><!-- End #jm-right -->
+    <div class="clear"></div> <!-- End .clear -->
+    </body>
+</html>

@@ -1,0 +1,38 @@
+#nav {padding: 187px 0px 0px 208px; width: 185px;
+    float: left; }
+
+#nav li { width: 118px; height: 38px; line-height: 38px;text-align: center; border-bottom: 1px solid #f5ad53; }
+#nav li a {color: #fff; font-size: 20px;}
+#nav li a:hover {text-decoration: none;}
+/* Menu
+#menu {width:998px; height:51px; margin:5px auto; padding:0; 
+background: #FFFFFF url(/images/img03.gif) repeat-x left top;
+border-left: solid 1px #ccc;
+border-right: solid 1px #ccc;
+}
+#menu ul {list-style:none; line-height:normal;}
+#menu li {float:left;  width:120px;  }
+
+#menu a {display:block;  height:35px; margin-right:1px;
+padding:16px 40px 0px 40px; background:url(/images/img04.gif) no-repeat right top; text-decoration: none; text-align: center;
+ text-transform: uppercase; font-size:15px; font-weight:bold; color:#000; border:none;}
+
+#menu a:hover, #menu .current_page_item  { background: url(/images/img05.gif) repeat-x left top; text-decoration:none;
+color:#FFFFFF; }
+*/
+
+/*#menu .current_page_item a {}*/
+
+
+/*面包导航
+#bread {padding:5px 10px; margin:5px auto;  border: 1px solid #EEE;}
+#bread a {color:#787878;}
+#bread a:hover {text-decoration:underline; color:#787878;}
+   */
+
+
+
+
+
+
+

@@ -1,0 +1,72 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>088山货网管理系统</title>	  
+        <!-- CSS -->
+        <link rel="stylesheet" href="<?php echo '/'.ADNAME.'/';?>resources/css/inc.css" type="text/css" media="screen" />	  
+		<!-- jQuery -->
+        <script type="text/javascript" src="/style/js/jquery-1.3.2.min.js"></script>
+        <script type="text/javascript" src="<?php echo '/'.ADNAME.'/';?>resources/scripts/simpla.jquery.configuration.js"></script>        
+    </head>    
+    <body>
+        <div id="jm-right">            
+            <!-- 文章列表，添加 -->
+			<div class="content-box"><!-- Start Content Box -->
+				
+				<div class="content-box-header">
+					
+                    <h3>标签修改</h3>
+                    <span><a href="htmTagTpl.php">返回</a></span>					
+					<div class="clear"></div>
+					
+				</div> <!-- End .content-box-header -->
+				
+				<div class="content-box-content">
+					
+					<div class="tab-content default-tab" id="tab1"> 
+											
+						<form action="#" method="post">
+							
+							<fieldset> <!-- Set class to "column-left" or "column-right" on fieldsets to divide the form into columns -->
+								
+							    <p>
+									<label>标签名称</label>
+										<input class="text-input small-input"type="text" id="small-input" name="title" value="<?php echo $editQuery['t_title']; ?>"/>
+                                        <input name="editId" type="hidden" value="<?php echo $editQuery['t_id']; ?>" />
+                                         
+                                </p>   
+							    <p>
+                                <label>修改时间</label>
+                                <span><?php echo $editQuery['t_uptime'];?> </span>
+                                     
+                                </p>   
+								
+							<p>
+									<label>标签内容</label>
+								    <textarea class="text-input textarea wysiwyg"5 id="textarea" name="content" cols="79" rows="15"><?php echo $editQuery['t_content']; ?> </textarea>
+							</p>
+								
+								<p>
+									<input class="button" type="submit"
+                                    value="确定提交" name="Update" />
+								</p>
+								
+							</fieldset>
+							
+							<div class="clear"></div><!-- End .clear -->
+							
+						</form>
+						
+					</div> <!-- End #tab2 -->        
+					
+				</div> <!-- End .content-box-content -->
+				
+			</div> <!-- End .content-box -->
+            </div><!-- End #jm-right -->
+
+
+<div class="clear"></div> <!-- End .clear -->
+
+    </body>
+</html>

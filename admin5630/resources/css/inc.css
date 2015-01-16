@@ -1,0 +1,7 @@
+@charset "utf-8";
+/*页面设置原本带的 */
+@import url(reset.css);
+/*重写*/
+@import url(style.css);
+/*特效*/
+@import url(invalid.css);

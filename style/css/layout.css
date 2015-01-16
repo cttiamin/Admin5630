@@ -1,0 +1,82 @@
+﻿/* Banner 特效样式　1150*530  */
+        #focus_box {
+            position: relative;
+            margin: 0 auto;
+            zoom: 1;
+            width: 654px;
+            height: 409px;
+            overflow: hidden;
+        }
+
+        #focus_box ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #focus_btn {
+            position: absolute;
+            right: 5px;
+            bottom: 5px;
+            z-index: 2;
+        }
+
+        #focus_pic {
+            position: absolute;
+        }
+
+        #focus_pic li {
+            position: absolute;
+            left: 0;
+        }
+
+        #focus_pic li img {
+            border: none;
+            float: left;
+        }
+
+        #focus_btn li {
+            float: left;
+            font-size: 12px;
+            width: 25px;
+            height: 25px;
+            line-height: 25px;
+            font-weight: bold;
+            text-align: center;
+            background: #fff;
+            color: #000;
+            margin-right: 2px;
+            cursor: pointer;
+            border-radius: 20px;
+        }
+
+        #focus_btn li.on {
+            background: #ed8812;
+            color: #fff;
+        }
+
+        #focus_box1 {
+            position: relative;
+            margin: 0 auto;
+            overflow: hidden;
+            zoom: 1;
+        }
+
+        #focus_box1 ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+
+/*Link 特效样式
+#slideBox{ width:1110px; position:relative; margin:0 9px; height:110px;}
+#slideUl{width:1020px; overflow:hidden; position:relative; margin:0 auto; margin:0px 40px 0;}
+#slideUl ul{position:relative; width:9999px; height:120px;}
+#slideUl ul li{ display:inline; float:left; line-height:34px; margin-right:18px;  height:58px; width:120px; padding: 0 20px 0 10px; border-right: 1px solid #bbe4fa;}
+#slideUl ul li a{ color:#666666;}
+#slideUl ul li a:hover{ text-decoration:underline; color:#c04c00;}
+#slideUl ul img{ height:58px; width:110px; display:block;}
+#sildeLeft{display:block;cursor:pointer; position:absolute;z-index:2; background:url("/style01/img/pic_62.png") no-repeat center; height:37px; width:15px; padding-left:25px; padding-top:25px; left:0;}
+#sildeRight{display:block; cursor:pointer; position:absolute; z-index:2;background:url("/style01/img/pic_63.png") no-repeat right; height:37px; width:30px; right:5px; padding-top:25px;}
+    */

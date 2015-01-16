@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>图片上传</title>
+<link rel="stylesheet" href="<?php echo '/'.ADNAME.'/';?>resources/css/inc.css" type="text/css" media="screen" />	  
+</head>
+<body>
+<p>
+</p>
+
+<h3 align="center">　产品图片上传-建议上传８００＊６００图片　</h3>
+<form action="" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <div align="center">
+    <p>
+      <input type="file" name="upfile" class="text-input small-input datepicker" />
+    </p>
+    <p>
+      <input type="submit" name="Submit" value=" 开 始 上 传 " class="button" />
+      <br />
+      <br />
+	允许上传的文件类型为:png, jpg, gif<?php //echo implode(', ',$uptypes) ?>
+    &nbsp;</p>
+  </div>
+</form>
+</body>
+</html>
+

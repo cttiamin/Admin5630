@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>天九幸福集团管理系统</title>	  
+        <!-- CSS -->
+        <link rel="stylesheet" href="<?php echo '/'.ADNAME.'/';?>resources/css/inc.css" type="text/css" media="screen" />	  
+		<!-- jQuery -->
+		<script type="text/javascript" src="/style/js/jquery-1.3.2.min.js"></script>	
+    </head>    
+	<body>
+			<!-- Page Head -->
+            <h2>欢迎登陆"天九幸福集团"管理系统</h2>
+            <p id="page-intro">您现在的位置是：<?php echo $_SERVER['SERVER_NAME']; ?> &nbsp;——>&nbsp;管理中心</p>
+            
+            <p id="page-intro">当前IP：<?php  echo $_SERVER['REMOTE_ADDR'];	 ?></p>
+            <p id="page-intro">当前时间：<?php  echo  date("Y-m-d H:i:s"); ?></p>
+            <p id="page-intro">服务器主机名：<?php echo $_SERVER['SERVER_NAME']; ?></p>
+            <p id="page-intro">浏览器版本：<?php  echo $_SERVER['HTTP_USER_AGENT']; ?></p>
+            <p id="page-intro">web服务器：<?php echo $_SERVER['SERVER_SOFTWARE']; ?></p>
+            <p id="page-intro">身份过期：： 5 分钟 </p>
+            
+			<ul class="shortcut-buttons-set">
+				
+				<li><a class="shortcut-button" href="arcArticle.php" ><span>
+<img src="resources/images/icons/pencil_48.png" alt="icon" /><br />
+查看文章
+</span></a></li>
+				
+				<li><a class="shortcut-button" href="htmIndex.php"><span>
+<img src="resources/images/icons/paper_content_pencil_48.png" alt="icon" /><br />
+页面生成</span></a></li>
+				
+				<li><a class="shortcut-button" href="/libs/plus/upfiles.php"><span>
+<img src="resources/images/icons/image_add_48.png" alt="icon" /><br />
+上传图片</span></a></li>
+		
+				<li><a class="shortcut-button" href="adDept.php" rel="modal"><span>
+<img src="resources/images/icons/comment_48.png" alt="icon" /><br />
+网站信息</span></a></li>
+				
+			</ul><!-- End .shortcut-buttons-set -->
+<div class="clear"></div> <!-- End .clear -->
+
+	</body>
+</html>

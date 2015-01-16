@@ -1,0 +1,33 @@
+@charset "utf-8";
+/********* JM Edit Style *************
+ *
+ * */
+
+/*file style*/
+.files{
+    list-style: none;  
+    margin,padding: 0 ;
+}
+
+.files dl
+{
+    border: 1px solid #ccc;
+    padding 5px;
+    display: block; float:left;
+    width: 150px; height:auto;
+    background:#f7f7f7;   
+}
+.files dt{line-height:18px;}
+.files dd{}
+
+.files li{
+    border: 1px solid #ccc;
+    padding 5px !important;
+    display: block;
+    width: 150px; height:180;
+    float:left;
+    background:#f7f7f7  !important; 
+}
+.files li span { }
+
+.files img { padding 5px; !important }

@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>天九幸福集团管理系统</title>	  
+        <!-- CSS -->
+        <link rel="stylesheet" href="<?php echo '/'.ADNAME.'/';?>resources/css/inc.css" type="text/css" media="screen" />	  
+		<!-- jQuery -->
+		<script type="text/javascript" src="/style/js/jquery-1.3.2.min.js"></script>
+		<!-- jQuery Configuration -->
+		<script type="text/javascript" src="<?php echo '/'.ADNAME.'/';?>resources/scripts/simpla.jquery.configuration.js"></script>		
+    </head>    
+	
+	<body class="big_bk" style="overflow: hidden;">
+		
+		<div id="sidebar"><div id="sidebar-wrapper"> <!-- Sidebar with logo and menu -->
+			
+			<h1 id="sidebar-title"><a href="#">天九幸福集团管理系统</a></h1>
+		  
+			<!-- Logo (221px wide) -->
+			<a href="#"><img id="logo" src="resources/images/logo.png" alt="Simpla Admin logo" /></a>
+		  
+			<!-- Sidebar Profile links -->
+			<div id="profile-links">
+                <!--你好, <a href="#" title="Edit your profile">管理员</a>-->
+  
+				<a href="/" target="_blank" title="View the Site">首页查看</a> | <a
+                    href="?SignOut=1" title="Sign Out">退出登陆</a>
+			</div>        
+			
+			<ul id="main-nav">  <!-- Accordion Menu -->
+                <!--
+				<li>
+					<a href="#" class="nav-top-item no-submenu">产品管理</a> 
+                    <ul>
+						<li><a href="proDisplay.php" target="main">商品列表</a></li>
+                        <li><a  href="proChannel.php"
+                            target="main">商品栏管理</a></li>
+                        <li><a  href="proDiscuss.php" target="main">评论列表</a></li>
+                    </ul>  
+				</li> -->
+				
+				<li> 
+					<a href="#" class="nav-top-item">内容管理</a>
+                    <ul>
+                        <!--<li><a href="arcTag.php" target="main">文章标签库</a></li>-->
+						<li><a href="arcArticle.php" target="main">文章列表</a></li>
+                        <li><a href="arcChannel.php" target="main">栏目管理</a></li> 
+					</ul>
+				</li>
+				
+				<li>
+					<a href="#" class="nav-top-item">Seo管理</a>
+					<ul>
+                        
+                        <li><a href="htmTagTpl.php" target="main">模板标签</a></li> 
+						<li><a href="adKeyWord.php" target="main">关键字</a></li> 
+						<li><a href="adKeyWordPost.php" target="main">过滤器</a></li>
+                        <!--               
+						
+                        <li><a href="htmlProDisplay.php" target="main">产品内容生成</a></li>
+                        <li><a href="htmlarcChannel.php" target="main">新闻栏目生成</a></li>
+                        <li><a href="htmlarcArticle.php" target="main">新闻文章生成</a></li>
+                        -->
+
+
+					</ul>
+				</li>
+				
+				<li>
+					<a href="#" class="nav-top-item">系统管理</a>
+                    <ul>
+                        <!--<li><a href="htmIndex.php" target="main">HTML生成</a></li>-->
+						<li><a href="adDept.php" target="main">网站信息管理</a></li>
+                        <li><a href="adUser.php" target="main">操作人员管理</a></li>
+                        <!--<li><a href="adFile.php" target="main">文件管理</a></li>-->
+						     
+					</ul>
+				</li>
+                <!--
+				<li>
+					<a href="#" class="nav-top-item">订单查看</a>
+					<ul>
+						<li><a href="userOrder.php" id="ext01.html" target="main" >订单列表</a></li>
+					</ul>
+				</li>
+				
+				<li>
+					<a href="#" class="nav-top-item">会员</a>
+					<ul>
+						<li><a href="userList.php" target="main">会员列表</a></li>
+						<li><a href="userList.php" target="main">会员留言</a></li>
+					</ul>
+				</li>-->      
+				
+			</ul> <!-- End #main-nav -->
+			
+
+			
+    </div></div> <!-- End #sidebar -->
+
+<div class="fra_main">
+    <div id="main-content">
+             <iframe src="<?php echo '/'.ADNAME.'/';?>ifrMain.php" id="main"
+            name="main" frameborder="0" ></iframe>
+    </div><!-- End #main-content -->	
+</div><!-- End .fra_main -->	
+
+
+</body>
+</html>
+

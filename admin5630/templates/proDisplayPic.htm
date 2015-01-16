@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>088山货网管理系统</title>	  
+        <!-- CSS -->
+        <link rel="stylesheet" href="<?php echo '/'.ADNAME.'/';?>resources/css/inc.css" type="text/css" media="screen" />	  
+        <!-- jQuery -->
+        <script type="text/javascript" src="/style/js/jquery-1.3.2.min.js"></script>
+        <!-- jQuery Configuration -->
+        <script type="text/javascript" src="<?php echo '/'.ADNAME.'/';?>resources/scripts/simpla.jquery.configuration.js"></script>
+    </head>    
+    <body>
+        <div id="jm-right">
+
+
+            <!-- 文章列表，添加 -->
+            <div class="content-box"><!-- Start Content Box -->
+
+                <div class="content-box-header">
+
+                    <h3>产品图片修改-> </h2>
+                    <span>
+                        <a href="<?php echo $pageUrl; ?>"> 返回列表</a> -> 	
+                        <a href="<?php echo $proUrl;?>">产品修改</a>  -> 
+                        <a href="<?php echo $proUrl;?>&amp;a=pic">刷新</a> 
+                    <span>
+
+                            <div class="clear"></div>
+
+                        </div> <!-- End .content-box-header -->
+
+                        <div class="content-box-content">
+
+                            <div class="tab-content default-tab" id="tab1"> 
+                                <form action="#" method="post">
+
+
+                                <table>							
+                                    <thead>
+                                        <tr>
+                                            <th width="60">名称</th>
+                                            <th>图片描述</th>
+                                            <th width="70">操作</th>
+                                            <th width="70">像素大小</th>
+                                        </tr>								
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <td colspan="4">
+                                                <div class="bulk-actions align-left">
+
+                                                    <input class="button" type="submit" name="PicPost" value=" 提 交 添 加 " />
+                                                    <input class="button" type="reset" name="Submit" value=" 重 置 " />
+                                                </div>
+
+                                                <div class="clear"></div>
+                                            </td>
+                                        </tr>
+                                    </tfoot>
+
+                                    <tbody>   
+    <tr>
+        <td >最大图(1)</td>
+        <!-- <td>
+            
+            <?php  
+            if(strstr($row_arr['picture1'], 'jpg')) {  //如果有上传记录
+            ?>           
+            <input name="picture1" class="text-input medium-input datepicker"
+            type="text" value="<?php echo
+            "{%con%}".$row_con['picture1'];?>"/>
+            <?php
+            echo '<span>'.$row_arr['picture1'].'</span>'; 
+            }else{  //如果没有有上传记录
+            ?>
+            <input name="picture1" class="text-input large-input datepicker"
+            type="text" value="<?php echo
+            $row_arr['picture1']."{%con%}".$row_con['picture1'];?>"/>
+            <?php  } ?>
+        </td>
+        <td >
+            <?php  //如果有上传记录
+            if(strstr($row_arr['picture1'], 'jpg')) {  
+            echo "<a href=\"".$pageUrl."&amp;a=picDel&amp;i=".$picId."\" class=\"button\"> 删除图片</a>"; 
+            }else{
+            ?>           
+            <input type="button"
+            onclick="window.open('../libs/plus/upfiles.php?id=picture1','mywin','toolbar=no,location=no,scrollbars=yes,width=550,height=200,left=120,top=70')" name="Submit2" value="上传图片" class="button"  />
+            <?php } ?>
+        </td>
+        <td>
+            <?php if(!empty($row_arr['picture1']))
+            echo "<img alt=\"\" src = \" ". $row_arr['picture1'] ." \" width=\"30\" height=\"30\">";
+            ?>800*600
+        </td>
+        -->
+<?php        
+echo $proDisplay->proDisplayPicIs($row_arr['picture1'],
+$row_con['picture1'], 1, $pageUrl, $picId, $c)
+?>    
+
+    </tr>
+    <tr>
+        <td>中图(1)</td>
+   
+<?php        
+echo $proDisplay->proDisplayPicIs($row_arr['picture2'],
+$row_con['picture2'], 2, $pageUrl, $picId, $c)
+?>    
+
+        </tr>    
+        <tr>
+            <td>小图(1)</td>
+<?php        
+echo $proDisplay->proDisplayPicIs($row_arr['picture3'],
+$row_con['picture3'], 3, $pageUrl, $picId, $c)
+?>   
+    </tr>
+    <tr>
+        <td>最大图(2)</td>
+<?php        
+echo $proDisplay->proDisplayPicIs($row_arr['picture4'],
+$row_con['picture4'], 4, $pageUrl, $picId, $c)
+?>   
+    </tr>
+    <tr>
+        <td>中图(2)</td>
+<?php        
+echo $proDisplay->proDisplayPicIs($row_arr['picture5'],
+$row_con['picture5'], 5, $pageUrl, $picId, $c)
+?>   
+    </tr>   
+    <tr>
+        <td>小图(2)</td>
+<?php        
+echo $proDisplay->proDisplayPicIs($row_arr['picture6'],
+$row_con['picture6'], 6, $pageUrl, $picId, $c)
+?>   
+    </tr>
+    <tr>
+        <td>大图(3)</td>
+<?php        
+echo $proDisplay->proDisplayPicIs($row_arr['picture7'],
+$row_con['picture7'], 7, $pageUrl, $picId, $c)
+?>    
+
+    </tr>
+    <tr>
+        <td>中图(3)</td>
+<?php        
+echo $proDisplay->proDisplayPicIs($row_arr['picture8'],
+$row_con['picture8'], 8, $pageUrl, $picId, $c)
+?>     
+    </tr>
+    <tr>
+        <td>小图(3)</td>
+<?php        
+echo $proDisplay->proDisplayPicIs($row_arr['picture9'],
+$row_con['picture9'], 9, $pageUrl, $picId, $c)
+?>    
+    </tr>
+    <tr>
+        <td>最大图(4)</td>
+<?php        
+echo $proDisplay->proDisplayPicIs($row_arr['picture10'],
+$row_con['picture10'], 10, $pageUrl, $picId, $c)
+?>    
+
+    </tr>
+    <tr>
+        <td>中图(4)</td>
+<?php        
+echo $proDisplay->proDisplayPicIs($row_arr['picture11'],
+$row_con['picture11'], 11, $pageUrl, $picId, $c)
+?>    
+
+    </tr>
+    <tr>
+        <td>小图(4)</td>
+<?php        
+echo $proDisplay->proDisplayPicIs($row_arr['picture12'],
+$row_con['picture12'], 12, $pageUrl, $picId, $c)
+?>    
+
+    </tr>
+                                    </tbody>
+                                </table>  
+
+
+                                    <div class="clear"></div><!-- End .clear -->
+                                </form>
+
+                            </div> <!-- End #tab2 -->        
+
+                        </div> <!-- End .content-box-content -->
+
+                    </div> <!-- End .content-box -->
+                </div><!-- End #jm-right -->
+
+
+                <div class="clear"></div> <!-- End .clear -->
+
+            </body>
+</html>

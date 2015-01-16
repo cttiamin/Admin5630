@@ -1,0 +1,181 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>088山货网管理系统</title>	  
+        <!-- CSS -->
+        <link rel="stylesheet" href="<?php echo '/'.ADNAME.'/';?>resources/css/inc.css" type="text/css" media="screen" />	  
+		<!-- jQuery -->
+        <script type="text/javascript" src="/style/js/jquery-1.3.2.min.js"></script>
+        <script type="text/javascript" src="<?php echo '/'.ADNAME.'/';?>resources/scripts/simpla.jquery.configuration.js"></script>        
+    </head>    
+    <body>
+        <div id="jm-right">         
+            <!-- 栏目列表，添加 -->
+			<div class="content-box"><!-- Start Content Box -->
+				
+				<div class="content-box-header">
+				
+					<h3>订单详情</h3>
+<span>
+<a href="/admin5630/userOrder.php?p=1">返回</a>
+</span>					
+					<div class="clear"></div>
+					
+				</div> <!-- End .content-box-header -->
+				
+				<div class="content-box-content">
+					
+					<div class="tab-content default-tab" id="tab1"> 
+						<form action="#" method="post">
+							
+							<fieldset> 	
+							    <p>
+									<label>收货人姓名<input name="eoid" type="hidden" value="<?php echo $id;?>"></label>
+									<input class="text-input  small-input" type="text"  id="small-input" name="ename" value="<?php echo $edit['name'];?>" />
+                                </p>   
+							    <p>
+									<label>应付金额</label>
+									<input class="text-input  small-input" type="text"  id="small-input" name="emoney" value="<?php echo $edit['money'];?>"/>
+                                </p>   
+							    <p>
+									<label>详细地址</label>
+									<input class="text-input  medium-input"type="text"  id="medium-input" name="eaddress" value="<?php echo $edit['address'];?>"/>
+                                </p> 
+							    <p>
+									<label>固定电话</label>
+									<input class="text-input  small-input"type="text"  id="small-input" name="ephone" value="<?php echo $edit['phone'];?>"/>
+                                </p> 
+							    <p>
+									<label>手机号码</label>
+									<input class="text-input  small-input"type="text"  id="small-input" name="etel" value="<?php echo $edit['tel'];?>"/>
+                                </p> 
+							    <p>
+									<label>电子邮件</label>
+									<input class="text-input  small-input"type="text"  id="small-input" name="email" value="<?php echo $edit['mail'];?>"/>
+                                </p>   
+							    <p>
+									<label>送货送态 </label>
+				<input class="text-input" name="estate" type="radio" value="1" <?php if(1==$edit['state'])echo 'checked=\"checked\"'; ?> >
+				未付款
+				<input class="text-input" name="estate" type="radio" value="2" <?php if(2==$edit['state'])echo 'checked=\"checked\"'; ?> >
+				已付款等待发货
+				<input class="text-input" name="estate" type="radio" value="3" <?php if(3==$edit['state'])echo 'checked=\"checked\"'; ?> >
+				已发货
+				<input class="text-input" name="estate" type="radio" value="4" <?php if(4==$edit['state'])echo 'checked=\"checked\"'; ?> >
+				已完成                                
+				<input class="text-input" name="estate" type="radio" value="5" <?php if(5==$edit['state'])echo 'checked=\"checked\"'; ?> >
+                已取消   
+				<input class="text-input" name="estate" type="radio" value="6"
+                <?php if(6==$edit['state'])echo 'checked=\"checked\"'; ?> >
+				退货通知                 
+				<input class="text-input" name="estate" type="radio" value="7"
+                <?php if(7==$edit['state'])echo 'checked=\"checked\"'; ?> >
+                同意退货 
+				<input class="text-input" name="estate" type="radio" value="8"
+                <?php if(8==$edit['state'])echo 'checked=\"checked\"'; ?> >
+                等待退货 
+				<input class="text-input" name="estate" type="radio" value="9"
+                <?php if(9==$edit['state'])echo 'checked=\"checked\"'; ?> >
+				退货成功                 
+								</p>   
+							    <p>
+									<label>付款方式</label>
+				<input class="text-input" name="etype" type="radio" value="1" <?php if(1==$edit['type'])echo 'checked=\"checked\"'; ?> >
+				银行汇款支付
+				<input class="text-input" name="etype" type="radio" value="2" <?php if(2==$edit['type'])echo 'checked=\"checked\"'; ?> >
+				支付宝[担保]
+				<input class="text-input" name="etype" type="radio" value="3" <?php if(3==$edit['type'])echo 'checked=\"checked\"'; ?> >
+				支付宝及时到帐
+				<input class="text-input" name="etype" type="radio" value="4" <?php if(4==$edit['type'])echo 'checked=\"checked\"'; ?> >
+				财付通[即时到帐]
+
+                </p>
+                <p>
+                <label>支付宝订单号</label> 
+                <?php
+                if('' == $edit['zbian'] ){
+                    echo '暂无';
+                }
+                else
+                {
+                    echo $edit['zbian'];
+                }
+                
+                ?>
+                </p>
+                				<p>
+									<label>邮编</label>
+									<input class="text-input
+                                    small-input"type="text"  id="small-input"
+                                    name="epostage" value="<?php echo $edit['zip'];?>"/>
+                                </p> 
+							    <p>
+									<label>邮费</label>
+									<input class="text-input  small-input"type="text"  id="small-input" name="epostage" value="<?php echo $edit['postage'];?>"/>
+                                </p> 
+							    <p>
+									<label>备注</label>
+									<input class="text-input  large-input"type="text"  id="medium-input" name="econtent" value="<?php echo $edit['content'];?>"/>
+                                </p>   
+								<p>
+                                <label>商品ID</label>
+                                <?php echo $edit['pid'];?> <br/>
+
+								<?php									 
+	 $goodsArr = explode('%', $edit['pid'] );
+	 $goodsId = explode('@', $goodsArr['0'] );
+	 $goodsNum = explode('@', $goodsArr['1'] ); 
+	 
+for($i=0; $i<count($goodsId); $i++ )
+{
+		if( $goodsId[$i] != 0)
+		{
+			$sql = "select pro_base.p_id, pro_base.pc_id, pro_base.p_title, pro_base.p_price, pro_base.p_bian,p_stock,
+			pro_content.pn_weight
+			from pro_base
+			left join pro_content
+			on pro_base.p_id = pro_content.pn_id
+			where pro_base.p_id =".$goodsId[$i];
+			
+			$query = mysql_query( $sql );
+			$rs = mysql_fetch_array($query);
+			
+			if($rs['p_stock']==0 ){$stock = '无货';}else{$stock = '现货';}
+            echo '<label>商品编号</label> '.$rs['p_bian'].',  <br/> <label>名称</label> 
+                '.$rs['p_title'].' ,<br/> <label>价格</label>  ￥
+            '.$rs['p_price'].', <br/><label>库存</label> '.$stock.' ,<br/>
+            <label>数量</label> '.$goodsNum[$i]."<br/>";
+		}
+
+}	
+									 ?>
+									
+								</p>
+								
+								<p>
+									<input class="button" type="submit" value="确定提交" name="update" />
+								</p>
+
+								
+							</fieldset>
+							
+							<div class="clear"></div><!-- End .clear -->
+							
+						</form>
+					</div> <!-- End #tab1 -->
+					
+					<div class="tab-content" id="tab2">
+					
+						
+					</div> <!-- End #tab2 -->        
+					
+				</div> <!-- End .content-box-content -->
+				
+			</div> <!-- End .content-box 栏目列表，添加 -->
+            </div><!-- End #jm-right -->
+
+            <div class="clear"></div> <!-- End .clear -->  
+
+    </body>
+</html>

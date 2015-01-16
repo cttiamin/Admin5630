@@ -1,0 +1,87 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>山货网管理系统</title>	  
+        <!-- CSS -->
+        <link rel="stylesheet" href="<?php echo '/'.ADNAME.'/';?>resources/css/inc.css" type="text/css" media="screen" />	  
+		<!-- jQuery -->
+        <script type="text/javascript" src="/style/js/jquery-1.3.2.min.js"></script>
+        <script type="text/javascript" src="<?php echo '/'.ADNAME.'/';?>resources/scripts/simpla.jquery.configuration.js"></script>        
+    </head>    
+    <body>
+        <div id="jm-right">         
+            <!-- 栏目列表，添加 -->
+			<div class="content-box"><!-- Start Content Box -->
+				
+				<div class="content-box-header">
+				
+					<h3>订单详情</h3>
+<span>
+<a href="/admin5630/userOrder.php?p=1">返回</a>
+</span>					
+					<div class="clear"></div>
+					
+				</div> <!-- End .content-box-header -->
+				
+				<div class="content-box-content">
+					
+					<div class="tab-content default-tab" id="tab1"> 
+						<form action="payment/alipay_send_goods/sendgoods.php" method="post">
+							
+							<fieldset> 	
+
+							    <p>
+									<label>支付宝交易号</label>
+									<input class="text-input  small-input"
+                                    type="text"  id="small-input"
+                                    name="trade_no" value="<?php echo $_GET['alipay_send'];?>"/>
+                                </p> 
+
+
+                				<p>
+									<label>物流公司名称</label>
+									<input class="text-input
+                                    small-input"type="text"  id="small-input"
+                                    name="logistics_name" value=""/>
+                                </p> 
+							    <p>
+									<label>物流发货单号</label>
+									<input class="text-input  small-input" type="text"  id="small-input" name="invoice_no" value=""/>
+                                </p> 
+
+							    <p>
+									<label>物流发货类型</label>
+									<select name="transport_type">
+                  <option value="EMS">EMS</option>
+                  <option value="POST">平邮</option>
+                  <option value="EXPRESS" selected="selected">快递</option>
+                </select>
+                                </p> 
+								
+								<p>
+									<input class="button" type="submit" value="确定提交" name="update" />
+								</p>
+
+								
+							</fieldset>
+							
+							<div class="clear"></div><!-- End .clear -->
+							
+						</form>
+					</div> <!-- End #tab1 -->
+					
+					<div class="tab-content" id="tab2">
+					
+						
+					</div> <!-- End #tab2 -->        
+					
+				</div> <!-- End .content-box-content -->
+				
+			</div> <!-- End .content-box 栏目列表，添加 -->
+            </div><!-- End #jm-right -->
+
+            <div class="clear"></div> <!-- End .clear -->  
+
+    </body>
+</html>

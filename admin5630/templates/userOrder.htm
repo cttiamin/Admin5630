@@ -1,0 +1,134 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>山货网管理系统</title>	  
+        <!-- CSS -->
+        <link rel="stylesheet" href="<?php echo '/'.ADNAME.'/';?>resources/css/inc.css" type="text/css" media="screen" />	  
+		<!-- jQuery -->
+        <script type="text/javascript" src="/style/js/jquery-1.3.2.min.js"></script>
+        <script type="text/javascript" src="<?php echo '/'.ADNAME.'/';?>resources/scripts/simpla.jquery.configuration.js"></script>        
+    </head>    
+    <body>
+        <div id="jm-right">         
+            <!-- 栏目列表，添加 -->
+			<div class="content-box"><!-- Start Content Box -->
+				<div class="content-box-header">
+					<h3>订单列表</h3>
+					<div class="clear"></div>
+				</div> <!-- End .content-box-header -->
+				<div class="content-box-content">
+					<div class="tab-content default-tab" id="tab1"> 
+						<table>
+							<thead>
+								<tr>
+                                  <th><input class="check-all" type="checkbox" /></th>
+                                    <th>订单编号</th>
+								   <th>商品名称</th>
+								   <th>收货人</th>
+								   <th>金额</th>
+                                   <th>下单时间</th>
+								   <th>下单状态</th>
+								   <th>付款方式</th>
+								   <th>操作</th>
+								</tr>
+								
+							</thead>
+							<tfoot>
+								<tr>
+									<td colspan="9">
+<!--										<div class="bulk-actions align-left">
+											<select name="dropdown">
+												<option value="option1">移动到..</option>
+												<option value="option2">修改</option>
+												<option value="option3">删除</option>
+											</select>
+											<a class="button" href="#">执行</a>
+										</div>-->
+                                        <!-- .pagination 分页模块 -->
+                                        <?php echo $pageAdStr; ?>
+                                        <!-- End .pagination -->
+										<div class="clear"></div>
+									</td>
+								</tr>
+							</tfoot>
+						 
+                            <tbody>                                
+<?php  foreach($userOrderArr as $titleList)	{ ?>
+
+<tr>
+    <td><input type="checkbox" /></td>
+    <td><?php echo $titleList['1']; ?></td>
+    <td><?php
+
+	 $goodsArr = explode('%', $titleList['2'] );
+	 $goodsId = explode('@', $goodsArr['0'] );
+	 $goodsNum = explode('@', $goodsArr['1'] ); 
+for($i=0; $i<count($goodsId); $i++ )
+{
+		if( $goodsId[$i] != 0)
+		{
+			$sql = "select pro_base.p_id, pro_base.pc_id, pro_base.p_title, pro_base.p_price, pro_base.p_bian,p_stock,
+			pro_content.pn_weight
+			from pro_base
+			left join pro_content
+			on pro_base.p_id = pro_content.pn_id
+			where pro_base.p_id =".$goodsId[$i];
+			
+			$query = mysql_query( $sql );
+			$rs = mysql_fetch_array($query);
+			
+			if($rs['p_stock']==0 ){$stock = '无货';}else{$stock = '现货';}
+			echo $rs['p_bian'].' , '.$rs['p_title'].' , ￥'.$rs['p_price'].', '.$goodsNum[$i]."<br/>";
+		}
+
+}	 
+	 
+	 ?></td>
+	<td><?php echo $titleList['5']; ?></td>
+	<td>￥<?php echo $titleList['3']; ?></td>
+	<td><?php echo date( 'y/m/d H:i', $titleList['4']); ?></td>
+    <td><?php 
+					switch( $titleList['6'] ){
+						case 1: $state= '未付款'; break;
+                        case 2: $state= '<em style="color:red">已付款等待发货</em>'; break;
+                        case 3: $state= '<em style="color:orange">已发货</em>'; break;
+                        case 4: $state= '<em style="color:blue">已完成</em>'; break;
+                        case 5: $state= "已取消"; break;
+                        case 6: $state= "退货通知"; break;
+                        case 7: $state= "同意退货"; break;
+                        case 8: $state= "等待退货"; break;
+                        case 9: $state= "退货成功"; break;
+					}
+					echo $state;
+	?>
+	</td>
+	<td><?php 
+					switch( $titleList['7'] ){
+						case 1: $text= '银行汇款'; break;
+						case 2: $text= '支付宝担保'; break;
+						case 3: $text= '支付宝及时到帐'; break;
+						case 4: $text= "财付通即时到帐"; break;
+					}
+                    echo $text;
+                    //支付宝担宝 
+                    if($titleList[6] == 2 && $titleList['7'] == 2)
+                    {
+                    echo '<a href="?alipay_send='.$titleList['8'].'" target="_blank">发货</a>';
+                    } 
+                    //财付通担宝
+	?></td>
+    <td><a href="?Edit=<?php echo $titleList['0']; ?>" title="Edit">
+	<img src="resources/images/icons/pencil.png" alt="修改" /></a>
+	</td>
+</tr>
+<?php } ?>
+					    </tbody>
+						</table>
+					</div> <!-- End #tab1 -->
+                </div><!-- End .content-box-content -->
+			</div> <!-- End .content-box 栏目列表，添加 -->
+            </div><!-- End #jm-right -->
+            <div class="clear"></div> <!-- End .clear -->  
+    </body>
+</html>

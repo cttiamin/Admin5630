@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />		
+		<title>Simpla Admin | Sign In</title>
+        <!-- CSS -->
+        <link rel="stylesheet" href="resources/css/inc.css" type="text/css" media="screen" />		
+
+        <script type="text/javascript">if(self!=top){ window.open(self.location,'_top'); } </script> 
+
+<script type="text/javascript">
+ function chklogin(){
+	 if(document.form1.name.value.length<2){
+		 alert("用户名不能为空");
+		 document.form1.u_name.focus();
+		 return false;
+	 }
+	 if(document.form1.pwd.value.length<2){
+		 alert("密码不能为空");
+		 document.form1.u_pwd.focus();
+		 return false;
+	 }
+
+ }
+</script>
+
+</head>
+
+	<body id="login">
+		
+		<div id="login-wrapper" class="png_bg">
+			<div id="login-top">
+			
+				<h1>Simpla Admin</h1>
+				<!-- Logo (221px width) -->
+				<img id="logo" src="resources/images/logo.png" alt="Simpla Admin logo" />
+			</div> <!-- End #logn-top -->
+			
+			<div id="login-content">
+				
+				<form action="" name="form1" method="post" onsubmit="return chklogin();">
+				
+					<div class="notification information png_bg">
+						<div>
+							 非本站管理员请勿非法登陆.
+						</div>
+					</div>
+					
+					<p>
+						<label>用户名</label>
+						<input class="text-input" type="text" name="name" />
+					</p>
+					<div class="clear"></div>
+					<p>
+						<label> 密    码 </label>
+						<input class="text-input" type="password" name="pwd" />
+					</p>
+					<div class="clear"></div>
+					<p id="remember-password">
+						<input type="checkbox" />记住用户名
+					</p>
+					<div class="clear"></div>
+					<p>
+						<input class="button" type="submit" value=" 登   录 " />
+					</p>
+					
+				</form>
+			</div> <!-- End #login-content -->
+			
+        </div> <!-- End #login-wrapper -->
+
+        
+ 
+    <script type="text/javascript" src="/style/js/jquery-1.11.2.min.js"></script>
+
+		
+  </body>
+  </html>
