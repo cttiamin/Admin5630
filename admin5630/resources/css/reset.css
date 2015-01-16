@@ -135,7 +135,9 @@ a.remove-link:hover {color: #000;}
 .content-box {border: 1px solid #ccc;margin: 0 0 20px 0;background: #fff;}
 .content-box-header {background: #e5e5e5 url('../images/bg-content-box.gif') top left repeat-x;margin-top: 1px;height: 40px;}
 .content-box-header h3 {padding: 12px 15px 10px;float: left;}
-.content-box-header span {float:left; font-size:14px; padding: 12px 15px 10px;}
+.content-box-header span {
+    float:left; font-size:14px; padding: 15px 0px 10px;
+}
 ul.content-box-tabs {                float: right;padding: 12px 15px 0 0 !important;margin: 0 !important;}
 ul.content-box-tabs li {float: left;margin: 0;padding: 0 !important;background-image: none !important;}
 ul.content-box-tabs li a {color: #333;padding: 8px 10px;display: block;margin: 1px;border-bottom: 0;}

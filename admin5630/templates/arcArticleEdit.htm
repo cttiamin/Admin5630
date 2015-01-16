@@ -11,6 +11,14 @@
 		<script type="text/javascript" src="<?php echo '/'.ADNAME.'/';?>resources/scripts/simpla.jquery.configuration.js"></script>
     </head>    
     <body>
+
+       <?php
+// date_default_timezone_set('Asia/Chongqing'); 
+// $time1 = "2013-02-16 08:40:54";   
+// $time2 = strtotime($time1);
+// echo date('Y-m-d h:i:s', $time2);
+
+       ?>
         <div id="jm-right">
     
             
@@ -40,10 +48,14 @@
                                         id="small-input" name="title"
                                         value="<?php echo $editQuery['a_title']; ?>"
                                         />
+
                                         <input name="editId" type="hidden"
                                         value="<?php echo $editQuery['a_id']?>"/>
-                                        <span class="input-notification success png_bg">必填, 添加一篇内容，名称不能为空</span></p>   
-                                <p>    
+                                        <br>
+                                        <span class="input-notification success png_bg">必填, 添加一篇内容，名称不能为空</span>
+                                 </p> 
+
+                                <p>   
 									<label>添加时间</label>
 									<input class="text-input small-input
                                     datepicker" type="text" id="medium-input"
@@ -104,8 +116,9 @@
 										<option value="0">顶级栏目</option>
                                         <?php  echo $arcActicleSelectIn; ?>
 									</select> 
-									<a href="/libs/plus/upfiles.php" target="_blank">上传图片</a>
-                                </p>
+									
+                                    </p>
+
 <?php if( $authorityArray[4] == 1) {?>
                                 <p>    
 									<label>链接地址</label>
@@ -168,9 +181,11 @@
 <?php } else {?>
 <p><input type="hidden" name="discription" /></p>
 <?php } ?>
+
 <?php if( $authorityArray[2] == 1) {?>                                    
 								<p>
-                                <label>内容</label>                              
+                                <label>内容</label>  
+                                <a href="/libs/plus/upfiles.php" target="_blank">上传图片</a>
                                 <?php
 		include(JMADMIN."/fckeditor/fckeditor.php") ;
 		//PHP用$_POST['FCKeditor1']得到FCKeditor1的值。
@@ -184,7 +199,9 @@
 								</p>
 <?php } else {?>
 <input type="hidden" name="content"/>
-<?php } ?>																
+<?php } ?>						
+
+
 								<p>
 									<input class="button" type="submit"  value="确定提交" name="Edit" />
 								</p>
