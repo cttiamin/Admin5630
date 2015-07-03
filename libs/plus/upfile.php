@@ -75,7 +75,7 @@ if(isset($_FILES['file']['name'])){
 	$upfile2=$filepath.$up_name;
 	$upfile = "..".$upfile2;
 
-	move_uploaded_file($tmp_name,$upfile); //move_uploaded_file($tmp_name,"..".$upfile);
+	move_uploaded_file( $tmp_name, $upfile); //move_uploaded_file($tmp_name,"..".$upfile);
 	
 	$pinfo=pathinfo($upfile);
     $fname=$pinfo[basename];
